@@ -1,0 +1,8 @@
+com/qulo/controller/LoginController.class
+com/qulo/dao/UserDAOImpl.class
+com/qulo/model/User.class
+com/qulo/config/MvcConfiguration.class
+com/qulo/dao/UserDAO.class
+com/qulo/dao/UserDAOImpl$2.class
+com/qulo/controller/UserController.class
+com/qulo/dao/UserDAOImpl$1.class

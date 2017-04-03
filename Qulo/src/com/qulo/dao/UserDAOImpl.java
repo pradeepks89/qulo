@@ -1,0 +1,106 @@
+package com.qulo.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+ 
+import javax.sql.DataSource;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
+
+import com.qulo.model.User;
+
+public class UserDAOImpl implements UserDAO {
+	
+	 private JdbcTemplate jdbcTemplate;
+	 
+	 public UserDAOImpl(DataSource dataSource) {
+	        jdbcTemplate = new JdbcTemplate(dataSource);
+	    }
+	 
+	 @Override
+	 public void saveOrUpdate(User user) {
+		 if (user.getId() > 0) {
+		        // update
+		        String sql = "UPDATE USER SET EmailAddress=?, LookingFor=?, AboutMe=?, City=?, State=?, Country=? "
+		                    + "WHERE UserID=?";
+		        jdbcTemplate.update(sql, user.getEmail(), user.getLookingFor(), user.getAboutMe(), user.getCity(), user.getState(),
+		        		user.getCountry(), user.getId());
+		    } else {
+		        // insert
+		        String sql = "INSERT INTO USER (DisplayName, Password, UserRole, FirstName , LastName, "
+		                    + " City, State, Country, DOB,EmailAddress, DateOfJoining, Gender, LookingFor, AboutMe, CompatibilityQuestionsOver"
+		                    + ", IsEnabled ) "
+		                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, STR_TO_DATE(?, '%d-%m-%Y'), ?, CURDATE(), ?, ?, ?, ?, ?)";
+		        jdbcTemplate.update(sql, user.getDisplayName(), user.getPassword(),
+		        		user.getRole(), user.getFirstName(), user.getLastName(), user.getCity()
+		        		, user.getState(), user.getCountry(), user.getDob(), user.getEmail(), user.getGender(), user.getLookingFor()
+		        		, user.getAboutMe(), 0, 1);
+		    }
+	 }
+ 
+	 @Override
+	 public void delete(int userId ) {
+		 String sql = "update USER set IsEnabled = 0 WHERE UserID=?";
+		 jdbcTemplate.update(sql, userId);
+	 }
+ 
+	 @Override
+	 public List<User> list() {
+		 String sql = "SELECT * FROM USER";
+		    List<User> listUser = jdbcTemplate.query(sql, new RowMapper<User>() {
+		 
+		        @Override
+		        public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+		            User aUser = new User();
+		 
+		            aUser.setId(rs.getInt("UserID"));
+		            aUser.setDisplayName(rs.getString("DisplayName"));
+		            aUser.setPassword(rs.getString("Password"));
+		            
+		 
+		            return aUser;
+		        }
+		 
+		    });
+		 
+		    return listUser;
+	 }
+ 
+	 @Override
+	 public User get(String displayName) {
+		 String sql = "SELECT * FROM USER WHERE DisplayName='" + displayName+"'";
+		    return jdbcTemplate.query(sql, new ResultSetExtractor<User>() {
+		 
+		        @Override
+		        public User extractData(ResultSet rs) throws SQLException,
+		                DataAccessException {
+		            if (rs.next()) {
+		                User user = new User();
+		                user.setId(rs.getInt("UserID"));
+		                user.setDisplayName(rs.getString("DisplayName"));
+		                user.setFirstName(rs.getString("FirstName"));
+		                user.setLastName(rs.getString("LastName"));
+		                user.setCity(rs.getString("City"));
+		                user.setState(rs.getString("State"));
+		                user.setCountry(rs.getString("Country"));
+		                user.setDob(rs.getString("DOB"));
+		                user.setEmail(rs.getString("EmailAddress"));
+		                user.setAboutMe(rs.getString("AboutMe"));
+		                user.setLookingFor(rs.getString("LookingFor"));
+		                user.setGender(rs.getString("Gender"));
+		                
+		                return user;
+		            }
+		 
+		            return null;
+		        }
+		 
+		    });
+	 }
+	 
+
+}
