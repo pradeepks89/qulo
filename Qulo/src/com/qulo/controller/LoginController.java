@@ -17,19 +17,19 @@ public class LoginController {
 	@Autowired
     private UserDAO userDAO;
 	
-    @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
-    public String welcomePage(Model model) {
-        model.addAttribute("title", "Welcome");
-        model.addAttribute("message", "This is welcome page!");
-        return "welcomePage";
-    }
+//    @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
+//    public String welcomePage(Model model) {
+//        model.addAttribute("title", "Welcome");
+//        model.addAttribute("message", "This is welcome page!");
+//        return "welcomePage";
+//    }
  
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(Model model) {
         return "adminPage";
     }
  
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = { "/", "/welcome", "/login" }, method = RequestMethod.GET)
     public String loginPage(Model model ) {
     	
         return "loginPage";

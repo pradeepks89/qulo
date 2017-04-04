@@ -1,0 +1,201 @@
+.navbar-inverse {
+    background-color: #e65a58;
+    border-color: #e65a58;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #000000;
+}
+
+.navbar-inverse .navbar-nav>li>a:active {
+    color: Red;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #FFFFFF;
+    background: #e01a1a;
+}
+
+.navbar-toggle:hover {
+   background-color: #a90000 !important;
+}
+
+.myBgImage {
+    background-image: url("red-heart-background-26.jpg");
+    background-size: cover; 
+    height: 640px;
+}
+
+.navbar-default {
+    background-color: #e65a58;
+    border-color: #FFFFFF;
+    height: 30px;
+}
+
+.navbar-default .navbar-text {
+    color: #FFFFFF;
+}
+
+.myFooter {
+    display: inline-block;
+    float: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+
+.img-responsive{
+  display: block;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.image-container{
+    float:left;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5); 
+}
+
+#logo {
+    height: 50px;
+    margin-top: -14.5px;
+}
+
+@media screen and (min-width: 728px){
+#random1{
+    
+    max-width: 80%;
+   vertical-align: middle;
+}
+
+.btn.btn-primary{
+    vertical-align: bottom;
+    float:bottom;
+    font-size: 30px;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.selectpicker{
+        font-size: 22px;
+       padding-bottom: 10;
+       padding-top: 10;
+    }
+
+
+#mainContainer{
+    display: flex;
+    overflow: hidden;
+    height: 85%;
+    margin: 5% auto;
+    padding-top: 2vh;
+    position: relative;
+    width: 85%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+#imageC {
+    overflow: none;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    height: 100%;
+
+
+}
+
+#formC{
+    overflow: auto;
+    height: 80%;
+    padding: 5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    width:60vw;
+    
+}
+
+
+.buttoncontainer{
+    width: 20vw;
+    vertical-align: bottom;
+}
+
+.helper{
+    display: inline-block;
+    height: 80%;
+    vertical-align: middle;
+}
+}
+
+@media screen and (max-width: 414px) {
+    label
+    {
+        font-size: 26px;
+    }
+
+}
+ 
+    .questionLeft {
+    
+    text-align: center;
+    height: 100%;
+    width:screen.width;
+    height: 20vh;
+    }
+
+    .questionRight {
+    overflow: auto;
+    height: 60vh%;
+    padding: 5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    width:100vw;  
+
+}
+
+.buttoncontainer{
+    width: 100vw;
+    height: 20vh; 
+    vertical-align: bottom;
+}
+
+    #random1
+    {
+        margin-left:auto;
+        margin-right: auto;
+        max-width: 35%;
+    }
+
+    .selectpicker{
+        font-size: 15px;
+    }
+
+    .helper{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;}
+
+    .buttoncontainer{
+    width: 20vw;
+    vertical-align: bottom;
+}
+}

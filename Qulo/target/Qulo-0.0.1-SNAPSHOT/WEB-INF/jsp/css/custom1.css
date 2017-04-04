@@ -1,0 +1,212 @@
+.navbar-inverse {
+    background-color: #e65a58;
+    border-color: #e65a58;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #000000;
+}
+
+.navbar-inverse .navbar-nav>li>a:active {
+    color: Red;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #FFFFFF;
+    background: #e01a1a;
+}
+
+.navbar-toggle:hover {
+   background-color: #a90000 !important;
+}
+
+.myBgImage {
+    background-image: url("red-heart-background-26.jpg");
+    background-size: cover; 
+    height: 640px;
+}
+
+.navbar-default {
+    background-color: #e65a58;
+    border-color: #FFFFFF;
+    height: 30px;
+}
+
+.navbar-default .navbar-text {
+    color: #FFFFFF;
+}
+
+.myFooter {
+    display: inline-block;
+    float: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+
+.img-responsive{
+  display: block;
+  max-width: 50%;
+  max-height: 50%;
+}
+.image-container{
+    float:left;
+}
+
+@media screen and (min-width: 728px){
+
+ #random1{
+   position: fixed;
+    float:left;
+    width:400px;
+  max-width: 66.666670%
+  max-height: auto; 
+
+}
+
+.maincontainer{
+    position:relative;
+    width:960px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.compatImage{
+    float:left;
+    width:600px;
+    max-width: 50%
+    max-height:100%;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+body{
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin:0;
+    height:100%;
+    overflow:hidden;
+}
+.glyphicon.glyphicon-chevron-down{
+
+    font-size: 50px;
+    vertical-align: bottom;
+    padding-top: 35px;
+}
+
+.glyphicon.glyphicon-chevron-up{
+
+    font-size: 50px;
+    vertical-align: bottom;
+    padding-top: 35px;
+}
+
+.selectpicker{
+        font-size: 22px;
+       padding-bottom: 10;
+       padding-top: 10;
+
+    }
+
+.form-group{
+    float:right;
+    width:360px;
+    max-width: 37.55566%;
+    max-height: 100%;
+}
+
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5); 
+}
+
+#logo {
+    height: 50px;
+    margin-top: -14.5px;
+}
+
+
+
+#bootstrapSelectForm{
+
+}
+
+br
+{   
+    display: block !important;
+    margin-bottom: 1.5em !important;
+    margin-right: 1.5em !important;
+    margin-left: 1.5em !important;
+}
+
+
+
+h1{
+    padding-bottom: 10px;
+    font-size: 40px;
+    padding-left: 350px;
+}
+
+@media screen and (max-width: 414px) {
+    label
+    {
+        font-size: 16px;
+    }
+
+    h1{
+        font-size: 25px;
+    }
+
+    #random1
+    {
+
+
+        margin:0 auto;
+        padding-top: 50px;
+        padding-bottom: 80px;
+        padding-left: 20px;
+        max-width: 35%;
+    }
+
+    .selectpicker{
+        font-size: 15px;
+    }
+
+    body{
+    padding-top: 35px;
+}
+.glyphicon.glyphicon-chevron-down{
+
+    padding-left: 10px;
+    padding-top: 20px;
+    margin: 0 auto;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+.glyphicon.glyphicon-chevron-up{
+
+    padding-left: 120px;
+    padding-top: 20px;
+    font-size: 25px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+}
+
+}
+
+
