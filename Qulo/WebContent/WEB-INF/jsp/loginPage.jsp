@@ -10,20 +10,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<link href="<c:url value="/resources/includeFiles/includeAll.html" />"
-	rel="import">
+
+<link href="<c:url value="/resources/includeFiles/includeAll.html" />" rel="import"> 
 <link href="<c:url value="/resources/css/loginPage.css" />"
 	rel="stylesheet">
-<script src="<c:url value="/resources/js/loginPage.js" />"></script>
-
 
 <title>Login / Register</title>
 
 </head>
 <body>
-
+<div w3-include-html="<c:url value="/resources/includeFiles/topMenuLogin.jsp" />"></div> 
 	<!-- Page Content -->
 	<div class="container">
+	
 		<div class="myBgImage">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
@@ -90,75 +89,79 @@
 
 									
 										<form:form id="register-form" action="registerUser" method="post" modelAttribute="user" style="display: block;">
-										<div class="form-group">
+										
+										<div class="form-group col-lg-6 col-md-6 col-sm-6">
+											First Name: <form:input path="firstName" name="firstName" id="firstName"
+												tabindex="1" class="form-control" placeholder="First Name"/>
+										</div>
+										<div class="form-group col-lg-6 col-md-6 col-sm-6">
+											Last Name: <form:input path="lastName" name="lastName" id="lastName"
+												tabindex="2" class="form-control" placeholder="Last Name"/>
+										</div>
+										
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
 											Display Name: <form:input path="displayName" name="username"
-												id="username" tabindex="1" class="form-control"
+												id="username" tabindex="3" class="form-control"
 												placeholder="Display Name"/>
 											
 										</div>
-										<div class="form-group">
+										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											Password: <form:input path="password" name="password"
-												id="password" tabindex="2" class="form-control"
+												id="password" tabindex="4" class="form-control"
 												placeholder="Password"/>
 										</div>
-										<div class="form-group">
+										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											Confirm Password: <input type="password"
-												name="confirm-password" id="confirm-password" tabindex="3"
+												name="confirm-password" id="confirm-password" tabindex="5"
 												class="form-control" placeholder="Confirm Password">
 										</div>
-										<div class="form-group">
-											First Name: <form:input path="firstName" name="firstName" id="firstName"
-												tabindex="4" class="form-control" placeholder="First Name"/>
-										</div>
-										<div class="form-group">
-											Last Name: <form:input path="lastName" name="lastName" id="lastName"
-												tabindex="5" class="form-control" placeholder="Last Name"/>
-										</div>
-										<div class="form-group">
+										
+										<div class="form-group form-group-lg col-lg-4 col-md-4 col-sm-4">
 											City: <form:select path="city" name="city" id="city" tabindex="6"
 												class="form-control">
 												<form:option value="bryan">Bryan</form:option>
 												<form:option value="cs">College Station</form:option>
 											</form:select>
 										</div>
-										<div class="form-group">
+										<div class="form-group form-group-lg col-lg-4 col-md-4 col-sm-4">
 											State: <form:select path="state" name="state" id="state" tabindex="7"
 												class="form-control">
 												<form:option value="texas">Texas</form:option>
 											</form:select>
 										</div>
-										<div class="form-group">
+										<div class="form-group form-group-lg col-lg-4 col-md-4 col-sm-4">
 											Country: <form:select path="country" name="country" id="country" tabindex="8"
 												class="form-control">
 												<form:option value="usa">USA</form:option>
 											</form:select>
 										</div>
-										<div class="form-group">
-											Date of Birth: <form:input path="dob" type="date" name="dob" id="dob"
-												tabindex="9" class="form-control" />
-										</div>
-										<div class="form-group">
-											Email: <form:input path="email" type="email" name="email" id="email"
-												tabindex="10" class="form-control"
-												placeholder="Email Address" />
-										</div>
-										<div class="form-group">
-											Gender: <form:select path="gender" name="gender" id="gender" tabindex="11"
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
+											Gender: <form:select path="gender" name="gender" id="gender" tabindex="9"
 												class="form-control">
 												<form:option value="female">Female</form:option>
 												<form:option value="male">Male</form:option>
 											</form:select>
 										</div>
-										<div class="form-group">
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
 											Looking For: <form:select path="lookingFor" name="lookingFor" id="lookingFor"
-												tabindex="12" class="form-control">
+												tabindex="10" class="form-control">
 												<form:option value="female">Female</form:option>
 												<form:option value="male">Male</form:option>
 											</form:select>
 										</div>
-										<div class="form-group">
-											About Me:
-											<form:textarea path="aboutMe" name="aboutMe" rows="10" cols="30"
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
+											Date of Birth: <form:input path="dob" type="date" name="dob" id="dob"
+												tabindex="11" class="form-control" />
+										</div>
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
+											Email: <form:input path="email" type="email" name="email" id="email"
+												tabindex="12" class="form-control"
+												placeholder="Email Address" />
+										</div>
+										
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<p>About Yourself:</p>
+											<form:textarea path="aboutMe" name="aboutMe" id="aboutMe"  
 												placeholder="About me"/>
 											
 										</div>
@@ -180,6 +183,7 @@
 			</div>
 		</div>
 	</div>
-
+<div w3-include-html="<c:url value="/resources/includeFiles/bottomMenuLogin.jsp" />"></div>
+<script src="<c:url value="/resources/js/loginPage.js" />"></script>
 </body>
 </html>
