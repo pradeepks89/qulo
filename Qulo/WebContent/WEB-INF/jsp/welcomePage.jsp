@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div w3-include-html="<c:url value="/resources/includeFiles/topMenu.jsp" />"></div> 
-	      
+	     test 
 	
 	<div w3-include-html="<c:url value="/resources/includeFiles/bottomMenu.jsp" />"></div> 
 </body>
