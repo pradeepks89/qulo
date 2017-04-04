@@ -33,12 +33,13 @@ public class UserController {
 	    return model;
 	}
 	
+	
 	//Registering user for the first time. Send to registration page
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/welcome", "/login" }, method = RequestMethod.GET)
 	public ModelAndView newUser(ModelAndView model) {
 	    User newUser = new User();
 	    model.addObject("user", newUser);
-	    model.setViewName("register");
+	    model.setViewName("loginPage");
 	    return model;
 	}
 	

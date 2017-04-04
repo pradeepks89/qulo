@@ -34,7 +34,7 @@ public class UserDAOImpl implements UserDAO {
 		        String sql = "INSERT INTO USER (DisplayName, Password, UserRole, FirstName , LastName, "
 		                    + " City, State, Country, DOB,EmailAddress, DateOfJoining, Gender, LookingFor, AboutMe, CompatibilityQuestionsOver"
 		                    + ", IsEnabled ) "
-		                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, STR_TO_DATE(?, '%d-%m-%Y'), ?, CURDATE(), ?, ?, ?, ?, ?)";
+		                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?, CURDATE(), ?, ?, ?, ?, ?)";
 		        jdbcTemplate.update(sql, user.getDisplayName(), user.getPassword(),
 		        		user.getRole(), user.getFirstName(), user.getLastName(), user.getCity()
 		        		, user.getState(), user.getCountry(), user.getDob(), user.getEmail(), user.getGender(), user.getLookingFor()

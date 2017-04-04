@@ -29,11 +29,11 @@ public class LoginController {
         return "adminPage";
     }
  
-    @RequestMapping(value = { "/", "/welcome", "/login" }, method = RequestMethod.GET)
-    public String loginPage(Model model ) {
-    	
-        return "loginPage";
-    }
+//    @RequestMapping(value = { "/", "/welcome", "/login" }, method = RequestMethod.GET)
+//    public String loginPage(Model model ) {
+//    	
+//        return "loginPage";
+//    }
  
     @RequestMapping(value = "/logoutSuccessful", method = RequestMethod.GET)
     public String logoutSuccessfulPage(Model model) {
