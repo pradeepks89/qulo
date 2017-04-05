@@ -14,7 +14,7 @@
  
     <b>This is protected page!</b>  
     
-    <c:out value="${user.displayName}"/> ${sessionScope.user.id} 
+    <c:out value="${user.displayName}"/> ${sessionScope.user.compatibilityQuestionsOver} 
     <a href="${pageContext.request.contextPath}/userProfileEdit">Edit Profile</a>
 </body>
 </html>
