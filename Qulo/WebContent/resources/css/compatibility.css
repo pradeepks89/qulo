@@ -1,322 +1,282 @@
-@media screen and (min-width: 768px){
 
-#submit{
-    margin-left: 30%;
+@media screen and (min-width: 768px) {
+	body {
+		height: 96vh;
+		overflow: hidden;
+		padding-top: 1%;
+	}
+	#mainContainer {
+		display: flex;
+		overflow: hidden;
+		height: 90%;
+		margin: 5% auto;
+		padding-top: 0%;
+		position: relative;
+		width: 70%;
+		backface-visibility: hidden;
+		will-change: overflow;
+		border-left: 1px solid grey;
+		border-right: 1px solid grey;
+		-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+		background-color: white;
+		border-radius: 5px;
+	}
+	.row {
+		width: 100%;
+		height:100%;
+	}
+	.vcenter {
+		top: 30%;
+	}
+	.btn{
+	    
+	    width:100%
+	}
+​
+	
+	
+	#submit {
+		margin-left: 30%;
+	}
+	#random1 {
+		width: 72%;
+		vertical-align: middle;
+		padding-top: 10%;
+		.
+	}
+	label {
+		display: block;
+		max-width: 100%;
+		margin-bottom: 5%;
+		font-weight: bold;
+		font-family: fantasy;
+		font-size: 0.75em;
+		color: darkslategrey;
+		line-height: 150% -webkit-font-smoothing: auto;
+	}
+	#formC {
+		max-height: 100%;
+		text-align: center;
+		margin-top: 7%;
+	}
+	#imageC {
+		overflow: none;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: none;
+		height: 100%;
+		padding-top: 5%;
+	}
+	#buttoncontainer {
+		padding-top: 8%;
+		vertical-align: bottom;
+		text-align: center;
+	}
+	.btn.btn-primary1 {
+		padding-right: 2%;
+		float: bottom;
+		font-size: 150%;
+		background-color: #a4ccef;
+		border-color: grey;
+		border: 2px solid grey;
+		color: black;
+		font-weight: bold;
+	}
+	#next {
+		margin: 4px;
+	}
+	#previous {
+		margin: 4px;
+	}
+	.btn.btn-block {
+		color: darkslategray;
+		background-color: #fff;
+		border-color: indianred;
+		font-weight: bold;
+		border-width: medium;
+		/*font-family: 'Caveat Brush'*/
+	}
+	h1 {
+		/*font-size: x-large;*/
+		color: indianred;
+	}
+	.fillerp {
+		font-size: x-large;
+		color: lightseagreen;
+		font-family: verdana;
+		text-shadow: -0.5px 0 green, 0 0.5px green, 0.5px 0 green, 0 -0.5px
+			green;
+	}
+	.filler1 {
+		font-size: 25px;
+		color: darkslategrey;
+		font-weight: italic;
+		text-shadow: currentColor;
+		font-family: fantasy;
+		justify-content: center;
+		padding-bottom: 25px;
+	}
+	.qset {
+		padding-bottom: 20%;
+		border: 2px round indianred;
+	}
+	.filler2 {
+		font-size: 25px;
+		color: indianred;
+		font-family: fantasy;
+	}
+	.ql {
+		font-weight: bold;
+		font-size: large;
+		color: indianred;
+	}
+	.dropdown-menu>li>a {
+		font-weight: inherit;
+		font-size: 18px;
+		/*color: indianred;*/
+		display: block;
+		padding: 1px 77px;
+		clear: both;
+		line-height: inherit;
+		color: darkslategrey;
+		white-space: nowrap;
+		border-width: medium;
+	}
+	.errorMsg {
+		font-size: 1.5em;
+		font-family: verdana;
+		color: indianred;
+		text-shadow: -0.5px 0 black, 0 0.5px indianred, 0.5px 0 black, 0 -0.5px
+			indianred;
+		padding-top: 10%;
+	}
 }
 
-#random1{
-    width: 72%;
-    vertical-align: middle;
-    padding-top: 10%;.
-}
-
-
-label {
-  display: block;
-  max-width: 100%;
-  margin-bottom: 5%;
-  font-weight: bold;
-  font-family:fantasy;
-  font-size: 0.75em;
-  color:darkslategrey;
-  line-height: 150%
-  -webkit-font-smoothing: auto;
-}
-
-#mainContainer{
-    display: flex;
-    overflow: hidden;
-    height: 100%;
-    margin: 5% auto;
-    padding-top: 0%;
-    position: relative;
-    width: 70%;
-    backface-visibility: hidden;
-    will-change: overflow;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
-    box-shadow: 10px 0 7px -7px rgba(31, 73, 125, 0.8), -10px 0 8px -7px rgba(31, 73, 125, 0.8);
-    background-color: white;
-}
-
-#formC {
-    max-height:100%;
-    text-align: center;
-    
-    margin-top: 7%;
-
-}
-
-body{
-
-    height: 89vh;
-    overflow: hidden;
-}
-
-#imageC {
-    overflow: none;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    height: 100%;  
-    padding-top: 5%; 
-        }
-
-#buttoncontainer{
-    padding-top: 8%;
-    vertical-align: bottom;
-    text-align: center;
-}
-
-.btn.btn-primary1{
-    padding-right:2%;
-    float:bottom;
-    font-size: 150%;
-    background-color:#a4ccef;
-    border-color: grey;
-    border: 2px solid grey;  
-    color:black;
-    font-weight: bold;
-}
-
-#next{
-
-    
-    margin:4px;
-}
-
-#previous{
-    margin:4px;
-}
-.btn.btn-block{
-    color: darkslategray;
-    background-color: #fff;
-    border-color: indianred;
-    font-weight: bold;
-    border-width: medium;
-    /*font-family: 'Caveat Brush'*/
-}
-
-h1{
-    /*font-size: x-large;*/
-    color: indianred;
-}
-
-
-.fillerp{
-    font-size: x-large;
-    color:lightseagreen;
-    font-family: verdana;
-    text-shadow: -0.5px 0 green, 0 0.5px green, 0.5px 0 green, 0 -0.5px green;
-
-}
-
-.filler1
-{
-    font-size: 25px;
-    color:darkslategrey;
-    font-weight: italic;
-    text-shadow: currentColor;
-    font-family: fantasy;
-    justify-content: center;
-    padding-bottom: 25px;
-}
-
-.qset{
-    padding-bottom: 20%;
-    border: 2px round indianred;
-}
-
-.filler2{
-    font-size: 25px;
-    color:indianred;
-    font-family: fantasy;
-}
-
-.ql{
-
-    font-weight: bold;
-    font-size: large;
-    color: indianred;
-
-}
-
-.dropdown-menu>li>a {
-    font-weight: inherit;
-    font-size: 18px;
-    /*color: indianred;*/
-    display: block;
-    padding: 1px 77px;
-    clear: both;
-    line-height: inherit;
-    color: darkslategrey;
-    white-space: nowrap;
-    border-width: medium;
-}
-
-#boxshadow{
-    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
-    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-}
-
-#boxshadow::after {
-    content: '';
-    position: absolute;
-    z-index: -1; /* hide shadow behind image */
-    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);                
-    width: 70%; 
-    left: 15%; /* one half of the remaining 30% */
-    height: 100px;
-    bottom: 0;
-}
-
-.errorMsg{
-
-    font-size: 1.5em;
-    font-family: verdana;
-    color:indianred;
-    text-shadow: -0.5px 0 black, 0 0.5px indianred, 0.5px 0 black, 0 -0.5px indianred;
-    padding-top: 10%;
-
-}
-
-}
-
-@media (max-width: 767px) {
-    /* For mobile phones: */
-    [class*="col-sm-"] {
-        width: 100%;
-    }
-#logo {
-    height: 50px;
-    margin-top: -14.5px;
-    /*padding-left: 70%;*/
-}
-
-.nav.navbar-nav.navbar-right{
-    padding-right:10%;
-}
-
-.errorMsg{
-
-    font-size: 0.75em;
-    font-family: verdana;
-    color:indianred;
-    text-shadow: -0.5px 0 indianred, 0 0.5px indianred, 0.5px 0 indianred, 0 -0.5px indianred;
-    padding-top: 5%;
-
-}
-
-#mainContainer{
-    padding-top: 15%;
-    position: relative;
-    width:100%;
-    margin-left: 0;
-    margin-right: 0;
-    background-color:white;
-}
-
-label
-    {
-        font-family:fantasy;
-        font-size: 1em;
-        font-weight: bold;
-        color:darkslategrey;
-        display:block;
-        padding-top: 10%;
-        padding-bottom: 4%;
-    }
-
-     #random1
-    {
-        max-width: 100%;
-        padding-left: 10%;
-        padding-bottom: 10%;
-
-    }
-    #imageC {
-        text-align: center;
-        width:90%;
-    }
-
-h1{
-    font-size: large;
-    color: indianred;
-}
-
-.fillerp{
-    font-size: x-large;
-    color:lightseagreen;
-    text-shadow: -0.5px 0 green, 0 0.5px green, 0.5x 0 green, 0 -0.5px green;
-
-
-}
-
-.filler1
-{
-    font-size: large;
-    color:darkslategrey;
-    font-weight: italic;
-    text-shadow: currentColor;
-    font-family: fantasy;
-    font-weight: bold;
-}
-
-.filler2{
-    font-size: large;
-    color:indianred;
-    font-family: fantasy;
-    font-weight: bold;
-}
-
-
-
-#formC {
-    width:100%;
-    text-align: center;
-
-}
-   
-#buttoncontainer{
-    padding-top: 6%;
-    text-align: center;
-}
-
-.btn.btn-primary{
-    padding-right:2%;
-    margin-bottom:2%;
-    font-size: 1em;
-    background-color:#a4ccef;
-    border-color: grey;
-    border: 2px solid grey;  
-    color:black;
-    font-weight: bold;
-}
-
-.btn.btn-block{
-    color: darkslategray;
-    background-color: #fff;
-    border-color: indianred;
-    font-weight: bold;
-    border-width: medium;
-}
-
-.dropdown-menu>li>a {
-    font-weight: inherit;
-    font-size: 18px;
-    /*color: indianred;*/
-    display: block;
-    padding: 1px 53px;
-    clear: both;
-    line-height: inherit;
-    color: darkslategrey;
-    white-space: nowrap;
-    border-width: medium;
-}
-
+@media ( max-width : 767px) {
+	/* For mobile phones: */
+	[class*="col-sm-"] {
+		width: 100%;
+	}
+	
+	.row {
+		width: 100%;
+		height:100%;
+		
+	}	
+	
+	.vcenter{
+		top:10%;
+		left:5%; 
+		
+	}
+	.btn{
+	    margin-top:7%;
+	    width:100%
+	}
+	
+	
+	#logo {
+		height: 50px;
+		margin-top: -14.5px;
+		/*padding-left: 70%;*/
+	}
+	.nav.navbar-nav.navbar-right {
+		padding-right: 10%;
+	}
+	.errorMsg {
+		font-size: 0.75em;
+		font-family: verdana;
+		color: indianred;
+		text-shadow: -0.5px 0 indianred, 0 0.5px indianred, 0.5px 0 indianred, 0
+			-0.5px indianred;
+		padding-top: 5%;
+	}
+	#mainContainer {
+		padding-top: 15%;
+		position: relative;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		background-color: white;
+	}
+	label {
+		font-family: fantasy;
+		font-size: 1em;
+		font-weight: bold;
+		color: darkslategrey;
+		display: block;
+		padding-top: 10%;
+		padding-bottom: 4%;
+	}
+	#random1 {
+		max-width: 50%;
+		padding-left: 10%;
+		padding-bottom: 10%;
+	}
+	#imageC {
+		text-align: center;
+		width: 90%;
+	}
+	h1 {
+		font-size: large;
+		color: indianred;
+	}
+	.fillerp {
+		font-size: x-large;
+		color: lightseagreen;
+		text-shadow: -0.5px 0 green, 0 0.5px green, 0.5x 0 green, 0 -0.5px green;
+	}
+	.filler1 {
+		font-size: large;
+		color: darkslategrey;
+		font-weight: italic;
+		text-shadow: currentColor;
+		font-family: fantasy;
+		font-weight: bold;
+	}
+	.filler2 {
+		font-size: large;
+		color: indianred;
+		font-family: fantasy;
+		font-weight: bold;
+	}
+	#formC {
+		width: 100%;
+		text-align: center;
+	}
+	#buttoncontainer {
+		padding-top: 6%;
+		text-align: center;
+	}
+	.btn.btn-primary1 {
+		padding-right: 2%;
+		margin-bottom: 2%;
+		font-size: 1em;
+		background-color: #a4ccef;
+		border-color: grey;
+		border: 2px solid grey;
+		color: black;
+		font-weight: bold;
+	}
+	.btn.btn-block {
+		color: darkslategray;
+		background-color: #fff;
+		border-color: indianred;
+		font-weight: bold;
+		border-width: medium;
+	}
+	.dropdown-menu>li>a {
+		font-weight: inherit;
+		font-size: 18px;
+		/*color: indianred;*/
+		display: block;
+		padding: 1px 53px;
+		clear: both;
+		line-height: inherit;
+		color: darkslategrey;
+		white-space: nowrap;
+		border-width: medium;
+	}
 }

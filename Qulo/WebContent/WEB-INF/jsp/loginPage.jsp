@@ -106,7 +106,7 @@
 											
 										</div>
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											Password: <form:input path="password" name="password"
+											Password: <form:input type="password" path="password" name="password"
 												id="password" tabindex="4" class="form-control"
 												placeholder="Password"/>
 										</div>
