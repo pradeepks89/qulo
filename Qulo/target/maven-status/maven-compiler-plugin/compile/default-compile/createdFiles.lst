@@ -1,8 +1,14 @@
-com/qulo/controller/LoginController.class
 com/qulo/dao/UserDAOImpl.class
 com/qulo/model/User.class
 com/qulo/config/MvcConfiguration.class
-com/qulo/dao/UserDAO.class
+com/qulo/model/CompatibilityQuestionForm.class
 com/qulo/dao/UserDAOImpl$2.class
+com/qulo/model/CompatibilityQuestion.class
+com/qulo/controller/LoginController.class
+com/qulo/dao/CompatibilityQuestionDAO.class
+com/qulo/controller/CompatibilityQuestionControler.class
+com/qulo/dao/CompatibilityQuestionDAOImpl.class
+com/qulo/dao/UserDAO.class
 com/qulo/controller/UserController.class
 com/qulo/dao/UserDAOImpl$1.class
+com/qulo/dao/CompatibilityQuestionDAOImpl$1.class

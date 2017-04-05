@@ -13,8 +13,9 @@
 	<context:component-scan base-package="com.qulo.controller,com.qulo.config,com.qulo.dao" />
  	<context:annotation-config />
  	
+ 	
+ 	<mvc:resources mapping="/resources/**" location="/resources/" />
  	<mvc:annotation-driven />
- 	<mvc:resources mapping="/images/**" location="/WEB-INF/jsp/images/" />
  	
 	<bean
     class="org.springframework.web.servlet.view.InternalResourceViewResolver">

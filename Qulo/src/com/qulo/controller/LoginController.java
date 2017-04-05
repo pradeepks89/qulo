@@ -41,19 +41,7 @@ public class LoginController {
         return "logoutSuccessfulPage";
     }
  
-    @RequestMapping(value = "/userInfo", method = RequestMethod.GET)
-    public ModelAndView userInfo(ModelAndView model, Principal principal) {
- 
-        // After user login successfully.
-        String userName = principal.getName();
-        System.out.println("UserDAO Name: "+ userName);
-        
-        
-        User newUser = userDAO.get(userName);
-        model.addObject("user", newUser);
-        model.setViewName("userInfoPage");
-	    return model;
-    }
+    
  
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public String accessDenied(Model model, Principal principal) {

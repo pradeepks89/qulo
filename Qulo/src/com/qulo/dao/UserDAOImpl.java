@@ -92,7 +92,7 @@ public class UserDAOImpl implements UserDAO {
 		                user.setAboutMe(rs.getString("AboutMe"));
 		                user.setLookingFor(rs.getString("LookingFor"));
 		                user.setGender(rs.getString("Gender"));
-		                
+		                user.setCompatibilityQuestionsOver(rs.getInt("CompatibilityQuestionsOver"));
 		                return user;
 		            }
 		 

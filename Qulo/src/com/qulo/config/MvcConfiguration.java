@@ -31,7 +31,12 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter{
     }
      
     @Bean
-    public UserDAO getContactDAO() {
+    public UserDAO getUserDAO() {
         return new UserDAOImpl(getDataSource());
+    }
+    
+    @Bean
+    public CompatibilityQuestionDAO getQuestionDAO() {
+        return new CompatibilityQuestionDAOImpl(getDataSource());
     }
 }

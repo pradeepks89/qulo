@@ -43,6 +43,20 @@ public class UserController {
 	    return model;
 	}
 	
+	//Landing page
+	@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
+    public ModelAndView userInfo(ModelAndView model, Principal principal , HttpServletRequest request) {
+ 
+        // After user login successfully.
+        String userName = principal.getName();
+        System.out.println("UserDAO Name: "+ userName);
+        
+        User newUser = userDAO.get(userName);
+        model.setViewName("userInfoPage");
+        request.getSession().setAttribute("user", newUser);
+	    return model;
+    }
+	
 	//Save user data and send to confirmation page
 	@RequestMapping(value="/registerUser" , method = RequestMethod.POST)
 	public ModelAndView registerUser(@ModelAttribute User user) throws IOException{
