@@ -14,9 +14,11 @@
 	rel="import">
 <link href="<c:url value="/resources/css/compatibility.css" />"
 	rel="stylesheet">
+	<link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon">
+	
 
 
-<title>${title}</title>
+<title>Compatibility Questions</title>
 </head>
 <body>
 	<div
@@ -25,7 +27,7 @@
 
 	<div class="container-fluid" id="mainContainer">
 		<div class="row compRow" >
-			<div class="col-sm-4 col-xs-12 vcenter">
+			<div class="col-sm-4 col-xs-12 vcenter imgPadding">
 				<img id="random1"
 				src="<c:url value="/resources/images/MaleQulo.gif" />"
 				alt="Image for guy/girl" align="left">
@@ -40,7 +42,7 @@
 							class="icomoon icon-smiley">
 					</h1>
 					</i></a> <br />
-					<p class="fillerp">Click Next to get started!</p>
+					<p class="landingTopText">Click Next to get started!</p>
 					</h1>
 				</div>
 				<form:form modelAttribute="compQueList"
@@ -62,7 +64,7 @@
 						<div class="dropdown" id="dMenu1">
 							<form:select
 							path="compatibilityQuestion[${status.index}].selection"
-							name="options" id="options" class="form-control selectpicker">
+							name="options" id="options${status.index+2}" class="form-control selectpicker">
 							<form:option value="">
 									Select one of the following
 								</form:option>
@@ -74,8 +76,7 @@
 							</c:forTokens>
 						</form:select>
 							<p class="errorMsg" style="display: none padding-top:10%;">Oops,
-								looks like you decided to skip this question.. Remember, every
-								question counts!</p>
+								please select a valid response!</p>
 						</div>
 					</div>
 					

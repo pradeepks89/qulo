@@ -152,12 +152,10 @@
 		border-width: medium;
 	}
 	.errorMsg {
-		font-size: 1.5em;
-		font-family: verdana;
+		font-size: 1em;
+		font-family: 'Bubblegum Sans', cursive;
+		letter-spacing: 1px;
 		color: indianred;
-		text-shadow: -0.5px 0 black, 0 0.5px indianred, 0.5px 0 black, 0 -0.5px
-			indianred;
-		padding-top: 10%;
 	}
 }
 
@@ -174,9 +172,12 @@
 	}	
 	
 	.vcenter{
-		top:10%;
-		left:5%; 
+		top:3%;
+		left:10%; 
 		
+	}
+	.imgPadding{
+	padding-left: 20%;
 	}
 	.btn{
 	    margin-top:7%;
@@ -193,12 +194,11 @@
 		padding-right: 10%;
 	}
 	.errorMsg {
-		font-size: 0.75em;
-		font-family: verdana;
+		font-size: 1em;
+		font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
 		color: indianred;
-		text-shadow: -0.5px 0 indianred, 0 0.5px indianred, 0.5px 0 indianred, 0
-			-0.5px indianred;
-		padding-top: 5%;
+
 	}
 	#mainContainer {
 		padding-top: 15%;

@@ -1,95 +1,91 @@
-$(document)
-		.ready(
-				function() {
-					var curr_div = 0;
+$(document).ready(function() {
+	var curr_div = 0;
 
-					var platform;
-					$(".dropdown-menu li a")
-							.click(
-									function() {
+	var platform;
 
-										$(this)
-												.parents(".dropdown")
-												.find('.btn')
-												.html(
-														$(this).text()
-																+ '<span class="caret"></span>');
+	$('#next').on('click', function() {
 
-										$(this).parents(".dropdown").find(
-												'.btn').val(
-												$(this).data('value'));
-										platform = $(this).text();
+		$(".errorMsg").hide();
+		temp = curr_div + 1;
 
-									});
+		if (temp > 1) {
+			if ($('#options' + temp).val() == '') {
+				$(".errorMsg").show();
+				return false;
+			}
+		}
+		if (curr_div == 14) {
 
-					$('#next')
-							.on(
-									'click',
-									function() {
+			$('#next').hide();
+			$('#submit').show();
+		}
 
-										$(".errorMsg").hide();
+		if (curr_div == 0 || curr_div < 15 || platform != null) {
 
-										if (curr_div == 14) {
+			$('#previous').show();
+			$('#filler').hide();
 
-											$('#next').hide();
-											$('#submit').show();
-										}
+			$('#question' + curr_div).hide();
 
-										if (curr_div == 0 || curr_div < 15
-												|| platform != null) {
+			curr_div = curr_div + 1;
+			console.log(curr_div);
+			$('#question' + curr_div).show();
 
-											$('#previous').show();
-											$('#filler').hide();
+		}
 
-											$('#question' + curr_div).hide();
+		else {
+			$(".errorMsg").show();
+		}
+		if (curr_div == 1) {
 
-											curr_div = curr_div + 1;
-											console.log(curr_div);
-											$('#question' + curr_div).show();
+			$('#previous').hide();
 
-										}
+		}
 
-										else {
-											$(".errorMsg").show();
-										}
-										if (curr_div == 1) {
+		platform = null;
+	});
 
-											$('#previous').hide();
+	$('#previous').on('click', function() {
 
-										}
+		$(".errorMsg").hide();
+		if (curr_div == 1) {
 
-										platform = null;
-									});
+			$('#previous').hide();
 
-					$('#previous').on('click', function() {
+		}
+		if (curr_div == 2) {
 
-						$(".errorMsg").hide();
-						if (curr_div == 1) {
+			$('#previous').hide();
 
-							$('#previous').hide();
+		}
+		if (curr_div != 16) {
 
-						}
-						if (curr_div != 16) {
+			$('#next').show();
+			$('#submit').hide();
+		}
 
-							$('#next').show();
-							$('#submit').hide();
-						}
+		if (curr_div > 0 || platform != null) {
 
-						if (curr_div > 0 || platform != null) {
+			$('#question' + curr_div).hide();
+			curr_div = curr_div - 1;
 
-							$('#question' + curr_div).hide();
-							curr_div = curr_div - 1;
+			$('#question' + curr_div).show();
 
-							$('#question' + curr_div).show();
+		}
 
-						}
+		else {
 
-						else {
+			$(".errorMsg").show();
 
-							$(".errorMsg").show();
+		}
 
-						}
+	});
+	$('#submit').on('click', function(e) {
+		$(".errorMsg").hide();
+		if ($('#options15').val() == '') {
+			$(".errorMsg").show();
+			event.preventDefault();
+		}
+	});
 
-					});
-
-				});
+});

@@ -77,9 +77,11 @@
 												class="form-control" placeholder="Password">
 											
 										</div>
+										<div id="loginErrorDiv" style="color: red; margin: 10px 0px;">
+										</div>
 										<!-- /login?error=true -->
 											<c:if test="${param.error == 'true'}">
-												<div style="color: red; margin: 10px 0px;">
+												<div id="loginDatabaseError" style="color: red; margin: 10px 0px;">
 
 													Login Failed!!!<br /> Reason :
 													${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
@@ -112,70 +114,76 @@
 										<form:form id="register-form" action="registerUser" method="post" modelAttribute="user" style="display: block;">
 										
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											First Name: <form:input path="firstName" name="firstName" id="firstName"
+											First Name: <form:input path="firstName" name="firstName" id="register1"
 												tabindex="1" class="form-control" placeholder="First Name"/>
 										</div>
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
-											Last Name: <form:input path="lastName" name="lastName" id="lastName"
+											Last Name: <form:input path="lastName" name="lastName" id="register2"
 												tabindex="2" class="form-control" placeholder="Last Name"/>
 										</div>
 										
-										<div class="form-group col-lg-12 col-md-12 col-sm-12">
-											Display Name: <form:input path="displayName" name="username"
-												id="username" tabindex="3" class="form-control"
+										<div  class="form-group col-lg-12 col-md-12 col-sm-12">
+											Display Name: <form:input path="displayName" name="displayName"
+												id="register3" tabindex="3" class="form-control"
 												placeholder="Display Name"/>
 											
 										</div>
+										
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											Password: <form:input type="password" path="password" name="password"
-												id="password" tabindex="4" class="form-control"
+												id="register4" tabindex="4" class="form-control"
 												placeholder="Password"/>
 										</div>
 										<div class="form-group col-lg-6 col-md-6 col-sm-6">
 											Confirm Password: <input type="password"
-												name="confirm-password" id="confirm-password" tabindex="5"
+												name="confirm-password" id="register5" tabindex="5"
 												class="form-control" placeholder="Confirm Password">
 										</div>
 										
 										<div class="form-group form-group-lg col-lg-4 col-md-4 col-sm-4">
-											City: <form:select path="city" name="city" id="city" tabindex="6"
+											City: <form:select path="city" name="city" id="register6" tabindex="6"
 												class="form-control">
+												<form:option value="">Select an option</form:option>
 												<form:option value="bryan">Bryan</form:option>
 												<form:option value="cs">College Station</form:option>
 											</form:select>
 										</div>
 										<div class="form-group form-group-lg col-lg-4 col-md-4 col-sm-4">
-											State: <form:select path="state" name="state" id="state" tabindex="7"
+											State: <form:select path="state" name="state" id="register7" tabindex="7"
 												class="form-control">
+												<form:option value="">Select an option</form:option>
 												<form:option value="texas">Texas</form:option>
 											</form:select>
 										</div>
 										<div class="form-group form-group-lg col-lg-4 col-md-4 col-sm-4">
-											Country: <form:select path="country" name="country" id="country" tabindex="8"
+											Country: <form:select path="country" name="country" id="register8" tabindex="8"
 												class="form-control">
+												<form:option value="">Select an option</form:option>
 												<form:option value="usa">USA</form:option>
 											</form:select>
 										</div>
 										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
-											Gender: <form:select path="gender" name="gender" id="gender" tabindex="9"
+											Gender: <form:select path="gender" name="gender" id="register9" tabindex="9"
 												class="form-control">
+												<form:option value="">Select an option</form:option>
 												<form:option value="female">Female</form:option>
 												<form:option value="male">Male</form:option>
 											</form:select>
 										</div>
 										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
-											Looking For: <form:select path="lookingFor" name="lookingFor" id="lookingFor"
+											Looking For: <form:select path="lookingFor" name="lookingFor" id="register10"
 												tabindex="10" class="form-control">
+												<form:option value="">Select an option</form:option>
 												<form:option value="female">Female</form:option>
 												<form:option value="male">Male</form:option>
 											</form:select>
 										</div>
 										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
-											Date of Birth: <form:input path="dob" type="date" name="dob" id="dob"
+											Date of Birth: <form:input path="dob" type="date" name="dob" id="register11"
 												tabindex="11" class="form-control" />
 										</div>
 										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
-											Email: <form:input path="email" type="email" name="email" id="email"
+											Email: <form:input path="email" type="email" name="email" id="register12"
 												tabindex="12" class="form-control"
 												placeholder="Email Address" />
 										</div>

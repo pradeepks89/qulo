@@ -22,6 +22,52 @@ $(document).ready(function() {
 		$(this).addClass('active');
 		e.preventDefault();
 	});
+	
+	$('#login-submit').click(function(e) {
+		if ($('#username').val() == '' || $('#password').val() == ''){
+			$( "#loginErrorDiv" ).append( "<p>User name or password is not filled.</p>" );
+			$( '#loginDatabaseError').hide();
+			event.preventDefault();
+		}
+		if ($('#username').val() == ''){
+			$('#username').css('border-color', 'red');
+		}else{
+			$('#username').css('border-color', '');
+		}
+		if ($('#password').val() == ''){
+			$('#password').css('border-color', 'red');
+		}else{
+			$('#password').css('border-color', '');
+		}
+		
+	});
+	
+	$('#register-submit').click(function(e) {
+		$( '#errorPassword').hide();
+		for (i = 1; i <= 12; i++) {
+			if ($('#register'+i).val() == ''){
+				$('#register'+i).css('border-color', 'red');
+				event.preventDefault();
+			}else{
+				$('#register'+i).css('border-color', '');
+			}
+			if(i == 11){
+				
+				
+				var age = 18;
+				var limitAge = new Date();
+				limitAge.setFullYear( limitAge.getFullYear() - age );
+				var currdate = new Date($('#register'+i).val());
+				if(currdate > limitAge){
+					
+					$( "#register11" ).after("<p id=errorPassword style=color:red>Must be over 18 years of age to register</p>");
+				}
+			}
+		}
+		if ($('#register4').val() != $('#register5').val()){
+			$( "#register5" ).after("<p id=errorPassword style=color:red>Password and confirm password does not match</p>");
+		}
+	});
 
 });
 
