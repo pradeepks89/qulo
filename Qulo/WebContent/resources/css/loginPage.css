@@ -1,6 +1,7 @@
 /*For form*/
 body {
     padding-top: 90px;
+    overflow: scroll;
 }
 .panel-login {
 	border-color: #ccc;

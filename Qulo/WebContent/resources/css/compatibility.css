@@ -1,4 +1,15 @@
+.filler2,.filler1{
+	font-family: 'Kalam', cursive;
+}
 
+.fillerp{
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+}
+
+.compRow{
+	height:100%;
+}
 @media screen and (min-width: 768px) {
 	body {
 		height: 96vh;
@@ -23,7 +34,7 @@
 	}
 	.row {
 		width: 100%;
-		height:100%;
+		
 	}
 	.vcenter {
 		top: 30%;
@@ -104,17 +115,13 @@
 	}
 	.fillerp {
 		font-size: x-large;
-		color: lightseagreen;
-		font-family: verdana;
-		text-shadow: -0.5px 0 green, 0 0.5px green, 0.5px 0 green, 0 -0.5px
-			green;
 	}
 	.filler1 {
 		font-size: 25px;
 		color: darkslategrey;
 		font-weight: italic;
 		text-shadow: currentColor;
-		font-family: fantasy;
+		
 		justify-content: center;
 		padding-bottom: 25px;
 	}
@@ -125,7 +132,7 @@
 	.filler2 {
 		font-size: 25px;
 		color: indianred;
-		font-family: fantasy;
+		
 	}
 	.ql {
 		font-weight: bold;
@@ -162,7 +169,7 @@
 	
 	.row {
 		width: 100%;
-		height:100%;
+	
 		
 	}	
 	
@@ -225,21 +232,19 @@
 	}
 	.fillerp {
 		font-size: x-large;
-		color: lightseagreen;
-		text-shadow: -0.5px 0 green, 0 0.5px green, 0.5x 0 green, 0 -0.5px green;
 	}
 	.filler1 {
 		font-size: large;
 		color: darkslategrey;
 		font-weight: italic;
 		text-shadow: currentColor;
-		font-family: fantasy;
+		
 		font-weight: bold;
 	}
 	.filler2 {
-		font-size: large;
+		font-size: x-large;
 		color: indianred;
-		font-family: fantasy;
+		
 		font-weight: bold;
 	}
 	#formC {
@@ -279,4 +284,11 @@
 		white-space: nowrap;
 		border-width: medium;
 	}
+}
+.cloudbg{
+	background-image:url("../images/cloud.gif");
+	background-size: 100% 100%;
+	height: 23%;
+	padding-top: 10%;
+	padding-left: 10%;
 }

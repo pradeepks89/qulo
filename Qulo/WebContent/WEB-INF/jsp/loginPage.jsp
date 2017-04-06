@@ -14,6 +14,7 @@
 <link href="<c:url value="/resources/includeFiles/includeAll.html" />" rel="import"> 
 <link href="<c:url value="/resources/css/loginPage.css" />"
 	rel="stylesheet">
+<link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon">
 
 <title>Login / Register</title>
 
@@ -24,6 +25,17 @@
 	<div class="container">
 	
 		<div class="myBgImage">
+		<div class="row" id="row_padding">
+							<div class="col-xs-4 col-md-2 col-md-offset-3" align="left">
+									<img id="Quin" class="img-thumbnail" alt="Quin" src="<c:url value="/resources/images/MaleQulo.gif" />"/>
+							</div>	
+								<div class="col-xs-4 col-md-2" align="center">
+									<img id="Qulo" class="img-thumbnail" alt="Qulo" src="<c:url value="/resources/images/quloname.png" />"/>
+							</div>
+								<div class="col-xs-4 col-md-2"align="right">
+									<img id="Lori" class="img-thumbnail" alt="Lorie" src="<c:url value="/resources/images/FemaleQulo.gif" />"/>
+								</div>
+							</div>
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 					<div class="panel panel-login">
@@ -39,6 +51,8 @@
 							<hr>
 						</div>
 						<div class="panel-body">
+						
+						
 							<div class="row">
 								<div class="col-lg-12">
 
@@ -46,17 +60,24 @@
 										action="${pageContext.request.contextPath}/j_spring_security_check"
 										method='POST' style="display: block;">
 										<div class="form-group">
+										<div style="margin-bottom: 3%" class="input-group" >
+										
 											<span class="input-group-addon"><i
 												class="glyphicon glyphicon-user"></i></span> <input type="text"
 												name="username" id="username" tabindex="1"
 												class="form-control" placeholder="Username" value="">
+												</div>
 										</div>
 										<div class="form-group">
+											<div style="margin-bottom: 3%" class="input-group" >
+											
 											<span class="input-group-addon"><i
 												class="glyphicon glyphicon-lock"></i></span> <input type="password"
 												name="password" id="password" tabindex="2"
 												class="form-control" placeholder="Password">
-											<!-- /login?error=true -->
+											
+										</div>
+										<!-- /login?error=true -->
 											<c:if test="${param.error == 'true'}">
 												<div style="color: red; margin: 10px 0px;">
 
@@ -162,7 +183,7 @@
 										<div class="form-group col-lg-12 col-md-12 col-sm-12">
 											<p>About Yourself:</p>
 											<form:textarea path="aboutMe" name="aboutMe" id="aboutMe"  
-												placeholder="About me"/>
+												tabindex="13" placeholder="About me"/>
 											
 										</div>
 										<div class="form-group">

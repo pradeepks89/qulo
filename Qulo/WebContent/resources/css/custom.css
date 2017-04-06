@@ -7,6 +7,61 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
+}
+#QuinLori {
+    width: 100%;
+    padding-top: 15%;
+    align:center;
+}
+
+row{
+	height:50%;
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: #fff;
+	background-color: #59b2e0;
+	font-size: large;
+	width:60%;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+	border-color: #59B2E6;
+}
+
+
+.landingTopHalf{
+	height: 10%;
+}
+.editProfileTopHalf{
+	height: 10%;
+	margin-top: 5%; 
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
+}
+.landingMid{
+	height: 80%;
+}
+.editProfileMid{
+	margin-top:5%;
+	margin-left:20%;
+	margin-right:20%;
+	
+}
+div.clearFlt {
+	clear:both;
+}
+
+.landingTopText{
+	margin-top: 5%; 
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
 }
 
 .navbar-inverse {
@@ -78,4 +133,66 @@ img:hover {
 	height: 50px;
 	margin-top: -14.5px;
 }
+
+#Quin {
+    -ms-transform: rotate(350deg); /* IE 9 */
+    -webkit-transform: rotate(350deg); /* Chrome, Safari, Opera */
+    transform: rotate(350deg);
+}
+#Lori {
+    -ms-transform: rotate(10deg); /* IE 9 */
+    -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+    transform: rotate(10deg);
+}
+#Qulo{
+	height: 11%
+}
+
+.img-thumbnail { /*For Mobile*/
+    background-color: rgba(255,255,255,.15);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+@media only screen and (min-width: 768px) { /*For Tab*/
+.img-thumbnail {
+    width: 80%;
+    height: auto;
+    background-color: rgba(255,255,255,.15);
+   border-color: rgba(255, 255, 255, 0.15);
+}
+.landingButton{
+	width: 50%;
+}
+}
+@media only screen and (min-width: 1000px) { /*For Laptop*/
+.img-thumbnail {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255,255,255,.15);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+.landingButton{
+	width: 50%;
+}
+}
+@media only screen and (max-width: 768px) {
+	.img-circle {
+    padding-bottom: 5%;
+    width: 30%;
+    height: auto;
+}
+	#QuinLori {
+    width: 130%;
+    padding-top: 15%;
+    align:center;
+}
+.landingTopHalf{
+	height: 25%;
+}
+.imageRow{
+	height:50%;
+}
 	
+	}
+	
+

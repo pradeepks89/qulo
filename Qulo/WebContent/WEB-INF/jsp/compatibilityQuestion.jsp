@@ -24,7 +24,7 @@
 	
 
 	<div class="container-fluid" id="mainContainer">
-		<div class="row" >
+		<div class="row compRow" >
 			<div class="col-sm-4 col-xs-12 vcenter">
 				<img id="random1"
 				src="<c:url value="/resources/images/MaleQulo.gif" />"
@@ -34,6 +34,7 @@
 					<div id='filler'>
 					<h1 class="filler1">Pffft! I know forms are difficult and
 						tedious, but I'm here to help you through the process.</h1>
+				
 					<h1 class="filler2">
 						Let us help you in getting your heart get Octupied!<a><i
 							class="icomoon icon-smiley">
@@ -48,12 +49,12 @@
 					items="${compQueList.compatibilityQuestion}" varStatus="status">
 					
 					<div class="qset" style="display: none;" id='question${status.index+1}'>
-						<h1 class="questionh">
+						<h1 >
 							<input type="hidden" name="compatibilityQuestion[${status.index}].questionID"
 									value="${compatibilityQuestion.questionID}" />
 							<input type = "hidden" name="compatibilityQuestion[${status.index}].question"
 							value="${compatibilityQuestion.question}" />
-							<label for="q${status.index}">${compatibilityQuestion.question}</label>
+							<label class="filler2" for="q${status.index}">${compatibilityQuestion.question}</label>
 						</h1>
 						<br />
 						
