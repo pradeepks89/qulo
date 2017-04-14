@@ -1,0 +1,62 @@
+.mainContent {
+	height: 70%;
+	background-color: transparent !important;
+}
+
+.mainContentPart1 {
+	height: 100%;
+	background-color: white !important;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	margin-bottom: 5%;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+.landingTextPage {
+	margin-top: 1%;
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
+}
+
+#QuinLori {
+	width: 100%;
+	align: center;
+}
+.octoTalk>h1{
+	font-family: 'Kalam', cursive;
+	font-size: 110%;
+}
+.compatibilityButton{
+	height: 12%;
+	width: 90%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	font-size: 70%;
+	letter-spacing: 1px;
+	white-space: normal;
+}
+
+@media ( max-width : 767px) {
+	/* For mobile phones: */
+	[class*="col-sm-"] {
+		width: 100%;
+	}
+	.mainContentPart1 {
+		height: 90%;
+		padding-left: 20px !important;
+		padding-right: 20px !important;
+		padding-top: 5px !important;
+	}
+	#QuinLori {
+		width: 80%;
+		align: center;
+	}
+	.landingTextPage {
+		font-size: 120%;
+	}
+	.compatibilityButton{
+		height: 15%;
+		width: 100%;
+		font-size: 80%;
+	}
+}

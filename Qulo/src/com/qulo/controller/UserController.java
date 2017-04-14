@@ -51,9 +51,10 @@ public class UserController {
         String userName = principal.getName();
         System.out.println("UserDAO Name: "+ userName);
         
-        User newUser = userDAO.get(userName);
+        User user = userDAO.get(userName);
         model.setViewName("userInfoPage");
-        request.getSession().setAttribute("user", newUser);
+        model.addObject(user);
+        request.getSession().setAttribute("user", user);
 	    return model;
     }
 	

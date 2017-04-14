@@ -1,0 +1,12 @@
+body {
+	background: url("../images/yellowHeart.jpg") transparent !important;
+	height: 100%;
+}
+.jumbotron{
+	margin-bottom : 0px;
+	padding-bottom: 0px;
+}
+.regularTalk{
+	font-family: 'Bubblegum Sans', cursive;
+	letter-spacing: 1px;
+}

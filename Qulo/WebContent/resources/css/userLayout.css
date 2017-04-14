@@ -1,0 +1,27 @@
+.headerContent {
+	height: 10%;
+	background-color: white !important;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	padding-bottom: 5%;
+}
+
+.headerText {
+	margin-top: 1%;
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
+}
+
+@media ( max-width : 767px) {
+	/* For mobile phones: */
+	[class*="col-sm-"] {
+		width: 100%;
+	}
+	.headerText {
+		margin-top: 8%;
+		font-size: 120%;
+	}
+	.headerContent {
+		height: 14%;
+	}
+}

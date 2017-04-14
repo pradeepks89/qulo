@@ -9,6 +9,8 @@ html, body {
 	padding: 0;
 	overflow: hidden;
 }
+
+
 #QuinLori {
     width: 100%;
     padding-top: 15%;
@@ -129,10 +131,7 @@ img:hover {
 	height: 1%;
 	/*margin-top: -14.5px; */
 }
-#logo {
-	height: 50px;
-	margin-top: -14.5px;
-}
+
 
 #Quin {
     -ms-transform: rotate(350deg); /* IE 9 */
@@ -149,7 +148,7 @@ img:hover {
 }
 
 .img-thumbnail { /*For Mobile*/
-    background-color: rgba(255,255,255,.15);
+    background-color: rgba(255,255,255, 0.15);
     border-color: rgba(255, 255, 255, 0.15);
 }
 

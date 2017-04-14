@@ -6,100 +6,122 @@
 <%@page session="true"%>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<link href="<c:url value="/resources/includeFiles/includeAll.html" />"
-	rel="import">
-<link href="<c:url value="/resources/css/compatibility.css" />"
+<c:import url="/resources/includeFiles/includeAll.jsp"></c:import>
+<link href="<c:url value="/resources/css/compatibilityPage.css" />"
 	rel="stylesheet">
-	<link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon">
-	
 
 
 <title>Compatibility Questions</title>
 </head>
 <body>
-	<div
-		w3-include-html="<c:url value="/resources/includeFiles/topMenu.jsp" />"></div>
-	
-
-	<div class="container-fluid" id="mainContainer">
-		<div class="row compRow" >
-			<div class="col-sm-4 col-xs-12 vcenter imgPadding">
-				<img id="random1"
-				src="<c:url value="/resources/images/MaleQulo.gif" />"
-				alt="Image for guy/girl" align="left">
-			</div>
-			<div class="col-sm-8 col-xs-12 vcenter">
-					<div id='filler'>
-					<h1 class="filler1">Pffft! I know forms are difficult and
-						tedious, but I'm here to help you through the process.</h1>
-				
-					<h1 class="filler2">
-						Let us help you in getting your heart get Octupied!<a><i
-							class="icomoon icon-smiley">
-					</h1>
-					</i></a> <br />
-					<p class="landingTopText">Click Next to get started!</p>
-					</h1>
+	<c:import url="/resources/includeFiles/topMenu.jsp"></c:import>
+	<div class="container">
+		<div class="jumbotron headerContent">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 headerText">
+					<span style="text-transform: capitalize;">Compatibility
+						Questions</span>
 				</div>
-				<form:form modelAttribute="compQueList"
+			</div>
+		</div>
+		<div class="mainContent jumbotron">
+			<form:form modelAttribute="compQueList"
 				action="userCompatibilitySave" method="post">
-				<c:forEach var="compatibilityQuestion"
-					items="${compQueList.compatibilityQuestion}" varStatus="status">
-					
-					<div class="qset" style="display: none;" id='question${status.index+1}'>
-						<h1 >
-							<input type="hidden" name="compatibilityQuestion[${status.index}].questionID"
-									value="${compatibilityQuestion.questionID}" />
-							<input type = "hidden" name="compatibilityQuestion[${status.index}].question"
-							value="${compatibilityQuestion.question}" />
-							<label class="filler2" for="q${status.index}">${compatibilityQuestion.question}</label>
-						</h1>
-						<br />
-						
-						
-						<div class="dropdown" id="dMenu1">
-							<form:select
-							path="compatibilityQuestion[${status.index}].selection"
-							name="options" id="options${status.index+2}" class="form-control selectpicker">
-							<form:option value="">
-									Select one of the following
-								</form:option>
-							<c:forTokens items="${compatibilityQuestion.options}" delims="|"
-								var="optionSplit">
-								<form:option value="${optionSplit}">
-									<c:out value="${optionSplit}" />
-								</form:option>
-							</c:forTokens>
-						</form:select>
-							<p class="errorMsg" style="display: none padding-top:10%;">Oops,
-								please select a valid response!</p>
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 imageContent ">
+						<img id="compatibilityImage"
+							src="<c:url value="/resources/images/MaleQulo.gif" />"
+							alt="Image for guy/girl" align="left">
+					</div>
+
+					<div
+						class="col-lg-9 col-md-9 col-sm-12 col-xs-12 mainContentQuestion">
+						<div class='opening'>
+							<div class="jumbotron mainContentQuestionBox octoTalk">
+								<h1>Pffft! I know forms are difficult and tedious, but I'm
+									here to help you through the process.</h1>
+
+								<h1>Let us help you in getting your heart get Octupied!</h1>
+								
+							</div>
+						</div>
+						<c:forEach var="compatibilityQuestion"
+									items="${compQueList.compatibilityQuestion}" varStatus="status">
+
+									<div class="qset" style="display: none;"
+										id='question${status.index+1}'>
+										<div class="jumbotron mainContentQuestionBox octoTalk">
+										<h1>
+											<input type="hidden"
+												name="compatibilityQuestion[${status.index}].questionID"
+												value="${compatibilityQuestion.questionID}" /> <input
+												type="hidden"
+												name="compatibilityQuestion[${status.index}].question"
+												value="${compatibilityQuestion.question}" /> <label
+												class="filler2" for="q${status.index}">${compatibilityQuestion.question}</label>
+										</h1>
+										</div>
+									</div>
+								</c:forEach>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+						<div class="jumbotron mainContentAnswer">
+							<div class="row">
+								<div
+									class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainContentAnswerSelect">
+									<div class='opening'>
+										<p class="regularTalk" style="padding-left: 30%;">Click
+											Next to get started!</p>
+									</div>
+									<c:forEach var="compatibilityQuestion"
+										items="${compQueList.compatibilityQuestion}"
+										varStatus="status">
+
+										<div class="qset" style="display: none;"
+											id='answer${status.index+1}'>
+											<div class="dropdown" id="dMenu1">
+												<form:select
+													path="compatibilityQuestion[${status.index}].selection"
+													name="options" id="options${status.index+2}"
+													class="form-control selectpicker">
+													<form:option value=""> Select one of the following </form:option>
+													<c:forTokens items="${compatibilityQuestion.options}"
+														delims="|" var="optionSplit">
+														<form:option value="${optionSplit}">
+															<c:out value="${optionSplit}" />
+														</form:option>
+													</c:forTokens>
+												</form:select>
+												<p class="errorMsg" style="display: none padding-top:10%;">Oops,
+													please select a valid response!</p>
+											</div>
+
+										</div>
+									</c:forEach>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+									<button class="btn btn-primary1" type="button" id='previous'
+										style="display: none" align="center">Previous</button>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+									<button class="btn btn-primary1 col-sm-5" type="button"
+										id='next'>Next</button>
+									<input class="btn btn-primary1 col-sm-7" type="submit"
+										id='submit' style="display: none" />
+								</div>
+							</div>
 						</div>
 					</div>
-					
-				</c:forEach>
-				<div class="col-sm-6 col-xs-12 button">
-					<button class="btn btn-primary1" type="button"
-								id='previous' style="display: none" align="center">Previous</button>
-				</div>
-				<div class="col-sm-6 col-xs-12">
-					<button class="btn btn-primary1 col-sm-5" type="button" id='next'>Next</button>
-					<input class="btn btn-primary1 col-sm-7" type="submit"
-								id='submit' style="display: none"/>
+
 				</div>
 			</form:form>
-			</div>
-			
-			
 		</div>
 	</div>
 
 
-	<div
-		w3-include-html="<c:url value="/resources/includeFiles/bottomMenu.jsp" />"></div>
+	<c:import url="/resources/includeFiles/bottomMenu.jsp"></c:import>
 	<script src="<c:url value="/resources/js/compatibility.js" />"></script>
 </body>
 </html>

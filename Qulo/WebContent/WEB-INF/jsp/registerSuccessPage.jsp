@@ -39,8 +39,8 @@
 											<c:out value="${user.displayName}" />
 										</p>
 										<p class="fillerp">
-											<a href="${pageContext.request.contextPath}">Click here
-												to Login<a>
+											<a href="${pageContext.request.contextPath}/login">Click here
+												to Login</a>
 										</p>
 									</div>
 								</div>

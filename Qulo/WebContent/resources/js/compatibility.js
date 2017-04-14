@@ -1,19 +1,19 @@
 $(document).ready(function() {
 	var curr_div = 0;
-
 	var platform;
-
+	
 	$('#next').on('click', function() {
 
 		$(".errorMsg").hide();
+		$(".opening").hide();
 		temp = curr_div + 1;
 
-		if (temp > 1) {
-			if ($('#options' + temp).val() == '') {
-				$(".errorMsg").show();
-				return false;
-			}
-		}
+		// if (temp > 1) {
+		// if ($('#options' + temp).val() == '') {
+		// $(".errorMsg").show();
+		// return false;
+		// }
+		// }
 		if (curr_div == 14) {
 
 			$('#next').hide();
@@ -80,12 +80,12 @@ $(document).ready(function() {
 		}
 
 	});
-	$('#submit').on('click', function(e) {
-		$(".errorMsg").hide();
-		if ($('#options15').val() == '') {
-			$(".errorMsg").show();
-			event.preventDefault();
-		}
-	});
+	// $('#submit').on('click', function(e) {
+	// $(".errorMsg").hide();
+	// if ($('#options15').val() == '') {
+	// $(".errorMsg").show();
+	// event.preventDefault();
+	//		}
+	//	});
 
 });
