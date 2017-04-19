@@ -20,46 +20,46 @@ import com.qulo.model.User;
 public class CompatibilityQuestionControler {
 
 	@Autowired
-    private CompatibilityQuestionDAO compDAO;
-	
+	private CompatibilityQuestionDAO compDAO;
+
 	@Autowired
-    private UserDAO userDAO;
-	
-	@RequestMapping(value="/userCompatibility")
-	public ModelAndView listQuestion(ModelAndView model) throws IOException{
-		
-		
+	private UserDAO userDAO;
+
+	@RequestMapping(value = "/userCompatibility")
+	public ModelAndView listQuestion(ModelAndView model) throws IOException {
+
 		CompatibilityQuestionList compQueList = new CompatibilityQuestionList();
 		compQueList.setCompatibilityQuestion(compDAO.list());
 		model.addObject("compQueList", compQueList);
-	    model.setViewName("compatibilityQuestion");
-		
+		model.setViewName("compatibilityQuestion");
+
 		return model;
 	}
-	
-	@RequestMapping(value="/userCompatibilitySave", method = RequestMethod.POST)
-	public ModelAndView saveQuestion(@ModelAttribute("compQueList") CompatibilityQuestionList compQueList, BindingResult bindResult
-			,ModelAndView model, Principal principal) throws IOException{
-		
+
+	@RequestMapping(value = "/userCompatibilitySave", method = RequestMethod.POST)
+	public ModelAndView saveQuestion(@ModelAttribute("compQueList") CompatibilityQuestionList compQueList,
+			BindingResult bindResult, ModelAndView model, Principal principal) throws IOException {
+
 		String userName = principal.getName();
 		User user = userDAO.get(userName);
-		
-		if (0 == user.getCompatibilityQuestionsOver()){
-			
+
+		if (0 == user.getCompatibilityQuestionsOver()) {
+
 			System.out.println("1111");
 			for (CompatibilityQuestion compQuestion : compQueList.getCompatibilityQuestion()) {
 				compDAO.insert(compQuestion, user.getId());
 				compDAO.updateCompatibilityQuestionOver(user.getId());
 			}
-		}else{
+		} else {
 			for (CompatibilityQuestion compQuestion : compQueList.getCompatibilityQuestion()) {
 				compDAO.update(compQuestion, user.getId());
-				
+
 			}
 		}
-		
+		user = userDAO.get(userName);
+		model.addObject(user);
 		model.setViewName("userInfoPage");
-		return  model;
+		return model;
 	}
-	
+
 }

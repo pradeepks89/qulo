@@ -16,12 +16,13 @@ public class User {
     private String aboutMe;
     private String dob;
     private int compatibilityQuestionsOver;
+    private int score;
     
     public User() {
     }
  
     public User(String displayName, String password, String firstName,String lastName, String city, String state, String country
-    		, String email, String gender, String lookingFor, String aboutMe, String dob, String role, int compatibilityQuestionsOver) {
+    		, String email, String gender, String lookingFor, String aboutMe, String dob, String role, int compatibilityQuestionsOver , int score) {
         this.setDisplayName(displayName);
         this.setPassword(password);
         this.setRole(role);
@@ -36,7 +37,7 @@ public class User {
         this.setAboutMe(aboutMe);
         this.setDob(dob);
         this.setCompatibilityQuestionsOver(compatibilityQuestionsOver);
-        
+        this.setScore(score);
     }
 
 	public String getDisplayName() {
@@ -157,6 +158,14 @@ public class User {
 
 	public void setCompatibilityQuestionsOver(int compatibilityQuestionsOver) {
 		this.compatibilityQuestionsOver = compatibilityQuestionsOver;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 }
 

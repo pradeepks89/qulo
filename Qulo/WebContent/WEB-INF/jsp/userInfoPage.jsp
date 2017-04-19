@@ -36,6 +36,7 @@
 				<div class="jumbotron mainContentPart1 octoTalk">
 					<img id="QuinLori" class="" alt="Quin and Lori"
 							src="<c:url value="/resources/images/quinLoriTransparent.png" />" />
+							${user.score}
 							<c:if test="${user.compatibilityQuestionsOver==0}">
 						<h1 class="">"Get started with the compatibility
 							questions to find your match just like we did!"</h1>

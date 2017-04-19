@@ -5,13 +5,15 @@
 }
 
 #compatibilityImage {
-	width: 92%;
+	width: 82%;
 	vertical-align: middle;
 	padding-top: 10%;
+	
 }
 .imageContent{
-	margin-top: 10%;
-	height: 40%;
+	margin-top: 4%;
+	height: auto;
+	
 }
 .cloudContent{
 	background: url("../images/cloud.png") no-repeat;
@@ -22,20 +24,29 @@
 	position: absolute;
 	clip: rect(140px,70px,200px,0px);
 }
-.mainContentQuestion{
+.question{
 	background-color: white !important;
 	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
 	margin-top:5%;
-	height: 30%;
-	width: 70%;
+	height: auto;
+	width:60%;
 	border-radius: 50px;
 }
-.mainContentQuestionBox {
+.questionBox {
 	background-color: transparent !important;
 	padding-top: 0px;
+	width:auto;
 }
-.mainContentAnswer{
-	height: 30%;
+.questionArea{
+	height:auto;
+	margin-bottom: 40px;
+}
+.answerArea{
+	height:28%;
+	margin-bottom: 60px;
+}
+.answer{
+	height: auto;
 	padding-top: 2%;
 	background-color: white !important;
 	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
@@ -48,10 +59,61 @@
 	font-size: 170%;
 }
 
+.previousButton{
+	padding-bottom: 2%;
+}
+.nextButton{
+	padding-bottom: 2%;
+}
+#previous{
+	width: 100%;
+	height: 30%;
+	background-color: #0877BC;
+	outline: none;
+	color: #fff;
+	
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #0877BC;
+	font-family: 'Kalam', cursive;
+	font-size: 170%;
+}
+#next{
+	width: 100%;
+	height: 30%;
+	background-color: #0877BC;
+	outline: none;
+	color: #fff;
+	
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #0877BC;
+	font-family: 'Kalam', cursive;
+	font-size: 170%;
+}
 
+#next:hover, #next:focus{
+	color: #fff;
+	background-color: #e65a58;
+	border-color: #e65a58;
+}
+#previous:hover, #previous:focus{
+	color: #fff;
+	background-color: #e65a58;
+	border-color: #e65a58;
+}
 
-
-
+.errorMsg {
+		font-size: 1em;
+		font-family: 'Bubblegum Sans', cursive;
+		letter-spacing: 1px;
+		color: indianred;
+	}
+.selectpicker{
+	font-family: 'Bubblegum Sans', cursive;
+}
 @media ( max-width : 767px) {
 #compatibilityImage {
 	max-width: 60%;

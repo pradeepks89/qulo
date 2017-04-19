@@ -12,6 +12,8 @@ public interface UserDAO {
     public User get(String displayName);
      
     public List<User> list();
+    
+    public List<User> userMatchList(String displayName, String lookingFor, int score);
 }
 
 

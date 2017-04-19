@@ -16,11 +16,16 @@
 <script src="<c:url value="/resources/js/jquery.js"/>"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" rel="stylesheet">
+
 
 <!-- Custom styles for this template -->
 <link href="<c:url value="/resources/css/menu.css"/>" rel="stylesheet"> 
 <link href="<c:url value="/resources/css/common.css"/>" rel="stylesheet"> 
 <link href="<c:url value="/resources/css/userLayout.css" />" rel="stylesheet">
+
+

@@ -27,17 +27,17 @@
 		<div class="mainContent jumbotron">
 			<form:form modelAttribute="compQueList"
 				action="userCompatibilitySave" method="post">
-				<div class="row">
+				<div class="row questionArea">
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 imageContent ">
 						<img id="compatibilityImage"
 							src="<c:url value="/resources/images/MaleQulo.gif" />"
-							alt="Image for guy/girl" align="left">
+							alt="Image for guy/girl" align="right">
 					</div>
 
 					<div
-						class="col-lg-9 col-md-9 col-sm-12 col-xs-12 mainContentQuestion">
+						class="col-lg-9 col-md-9 col-sm-12 col-xs-12 question">
 						<div class='opening'>
-							<div class="jumbotron mainContentQuestionBox octoTalk">
+							<div class="jumbotron questionBox octoTalk">
 								<h1>Pffft! I know forms are difficult and tedious, but I'm
 									here to help you through the process.</h1>
 
@@ -50,7 +50,7 @@
 
 									<div class="qset" style="display: none;"
 										id='question${status.index+1}'>
-										<div class="jumbotron mainContentQuestionBox octoTalk">
+										<div class="jumbotron questionBox octoTalk">
 										<h1>
 											<input type="hidden"
 												name="compatibilityQuestion[${status.index}].questionID"
@@ -65,9 +65,9 @@
 								</c:forEach>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row answerArea">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-						<div class="jumbotron mainContentAnswer">
+						<div class="jumbotron answer">
 							<div class="row">
 								<div
 									class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainContentAnswerSelect">
@@ -85,7 +85,7 @@
 												<form:select
 													path="compatibilityQuestion[${status.index}].selection"
 													name="options" id="options${status.index+2}"
-													class="form-control selectpicker">
+													class="form-control selectpicker show-tick">
 													<form:option value=""> Select one of the following </form:option>
 													<c:forTokens items="${compatibilityQuestion.options}"
 														delims="|" var="optionSplit">
@@ -101,12 +101,12 @@
 										</div>
 									</c:forEach>
 								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-									<button class="btn btn-primary1" type="button" id='previous'
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 previousButton">
+									<button class="btn btn-primary1 octoTalk" type="button" id='previous'
 										style="display: none" align="center">Previous</button>
 								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-									<button class="btn btn-primary1 col-sm-5" type="button"
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 nextButton buttonFont">
+									<button class="btn btn-primary1 col-sm-5 " type="button"
 										id='next'>Next</button>
 									<input class="btn btn-primary1 col-sm-7" type="submit"
 										id='submit' style="display: none" />
