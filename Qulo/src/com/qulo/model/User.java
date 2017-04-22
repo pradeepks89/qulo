@@ -15,14 +15,18 @@ public class User {
     private String lookingFor;
     private String aboutMe;
     private String dob;
+    private String age;
     private int compatibilityQuestionsOver;
     private int score;
+    private int isCrush;
+    private int mutualCrush;
     
     public User() {
     }
  
     public User(String displayName, String password, String firstName,String lastName, String city, String state, String country
-    		, String email, String gender, String lookingFor, String aboutMe, String dob, String role, int compatibilityQuestionsOver , int score) {
+    		, String email, String gender, String lookingFor, String aboutMe, String dob, String role, int compatibilityQuestionsOver , 
+    		int score, String age, int isCrush, int mutualCrush) {
         this.setDisplayName(displayName);
         this.setPassword(password);
         this.setRole(role);
@@ -38,6 +42,9 @@ public class User {
         this.setDob(dob);
         this.setCompatibilityQuestionsOver(compatibilityQuestionsOver);
         this.setScore(score);
+        this.setAge(age);
+        this.setIsCrush(isCrush);
+        this.setMutualCrush(mutualCrush);
     }
 
 	public String getDisplayName() {
@@ -166,6 +173,30 @@ public class User {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public int getIsCrush() {
+		return isCrush;
+	}
+
+	public void setIsCrush(int isCrush) {
+		this.isCrush = isCrush;
+	}
+
+	public int getMutualCrush() {
+		return mutualCrush;
+	}
+
+	public void setMutualCrush(int mutualCrush) {
+		this.mutualCrush = mutualCrush;
 	}
 }
 

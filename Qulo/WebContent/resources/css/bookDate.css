@@ -1,0 +1,60 @@
+.mainContent {
+	height: auto;
+	background-color: transparent !important;
+	padding-bottom: 70px;
+	padding-top: 0px;
+}
+
+.datePicture {
+	height: auto;
+	text-align: center;
+	background-color: transparent !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	
+}
+
+.dateForm {
+	height: auto;
+	text-align: center;
+	background-color: white !important;
+	margin-bottom: 5%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+	overflow:auto
+}
+
+#QuinLori {
+	width: 30%;
+	align: center;
+}
+.quloText {
+	margin-top: 1%;
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
+}
+
+textarea {
+	width: 100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box; /* Opera/IE 8+ */
+	border-style: inset;
+	border-width: 2px;
+	border-radius: 4px;
+	font-size: 70%;
+}
+.updateButton{
+	height: 6%;
+	width: 60%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	font-size: 70%;
+	letter-spacing: 1px;
+	white-space: normal;
+	padding-top:10px;
+	background-color: #337ab7;
+}

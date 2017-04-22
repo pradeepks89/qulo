@@ -4,14 +4,14 @@ import java.util.List;
 
 public class MatchList {
 	
-	private List<User> matchList;
+	private List<User> userMatchList;
 
-	public List<User> getMatchList() {
-		return matchList;
+	public List<User> getUserMatchList() {
+		return userMatchList;
 	}
 
-	public void setMatchList(List<User> matchList) {
-		this.matchList = matchList;
+	public void setUserMatchList(List<User> userMatchList) {
+		this.userMatchList = userMatchList;
 	}
     
 }

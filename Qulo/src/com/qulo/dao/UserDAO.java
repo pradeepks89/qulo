@@ -1,6 +1,8 @@
 package com.qulo.dao;
 
 import java.util.List;
+
+import com.qulo.model.CrushDate;
 import com.qulo.model.User;
 
 public interface UserDAO {
@@ -13,7 +15,15 @@ public interface UserDAO {
      
     public List<User> list();
     
-    public List<User> userMatchList(String displayName, String lookingFor, int score);
+    public List<User> getMatchList(int userID, String displayName, String lookingFor, int score);
+    
+    public void addToCrush( int userID, int crushID);
+    
+    public void removeFromCrush( int userID, int crushID);
+    
+    public void saveOrUpdateDate(CrushDate crushDate, String action);
+    
+    public CrushDate getDate(int user1, int user2);
 }
 
 

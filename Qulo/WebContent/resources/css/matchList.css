@@ -1,0 +1,52 @@
+.mainContent {
+	height: auto;
+	background-color: transparent !important;
+	padding-bottom: 70px;
+}
+.mainContentPart {
+	height: auto;
+	
+	background-color: white !important;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	margin-bottom: 5%;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	padding-bottom: 25px !important;
+}
+
+.octoTalk>h1{
+	font-family: 'Kalam', cursive;
+	font-size: 110%;
+}
+.addCrushButton{
+	height: 6%;
+	width: 90%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	font-size: 70%;
+	letter-spacing: 1px;
+	white-space: normal;
+	padding-top:10px;
+	
+}
+
+.removeCrushButton{
+	height: 6%;
+	width: 90%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	font-size: 70%;
+	letter-spacing: 1px;
+	white-space: normal;
+	padding-top:10px;
+	background-color: #e65a58;
+	
+}
+
+.quloText {
+	margin-top: 1%;
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
+}
+.profilePic{
+	width: 50%;
+}

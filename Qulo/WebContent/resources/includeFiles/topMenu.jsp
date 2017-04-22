@@ -20,7 +20,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="${pageContext.request.contextPath}/userInfo" style="text-transform: capitalize"><i class="glyphicon glyphicon-user" ></i>
 						${sessionScope.user.firstName} </a></li>
-				<li><a href="#"><i class="glyphicon glyphicon-heart"></i>
+				<li><a href="${pageContext.request.contextPath}/userCrushList"><i class="glyphicon glyphicon-heart"></i>
 						Crushlist</a></li>
 
 				<li><a href="${pageContext.request.contextPath}/logout"><i

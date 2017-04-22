@@ -48,7 +48,7 @@ public class CompatibilityQuestionDAOImpl implements CompatibilityQuestionDAO {
     		}
     	});
     			
-    			return listQuestion;
+    	return listQuestion;
     	
     }
 	

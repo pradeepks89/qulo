@@ -104,7 +104,26 @@
 	background-color: #e65a58;
 	border-color: #e65a58;
 }
+#submit{
+	width: 100%;
+	height: 30%;
+	background-color: #0877BC;
+	outline: none;
+	color: #fff;
+	
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #0877BC;
+	font-family: 'Kalam', cursive;
+	font-size: 170%;
+}
 
+#submit:hover, #submit:focus{
+	color: #fff;
+	background-color: #e65a58;
+	border-color: #e65a58;
+}
 .errorMsg {
 		font-size: 1em;
 		font-family: 'Bubblegum Sans', cursive;

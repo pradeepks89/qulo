@@ -36,7 +36,7 @@
 				<div class="jumbotron mainContentPart1 octoTalk">
 					<img id="QuinLori" class="" alt="Quin and Lori"
 							src="<c:url value="/resources/images/quinLoriTransparent.png" />" />
-							${user.score}
+							
 							<c:if test="${user.compatibilityQuestionsOver==0}">
 						<h1 class="">"Get started with the compatibility
 							questions to find your match just like we did!"</h1>
@@ -48,9 +48,9 @@
 						<c:if test="${user.compatibilityQuestionsOver==1}">
 						<h1 class="octoTalk">"You are all set! Let's find you a match"</h1>
 						
-						<form action="">
+						<form:form action="userMatchList" method="post">
 						    <button type="submit" class="btn btn-primary compatibilityButton">Proceed to Match List!</button>
-						</form>
+						</form:form>
 						</c:if>
 						</div>
 				</div>
