@@ -1,6 +1,7 @@
 .mainContent {
-	height: 70%;
+	height: auto;
 	background-color: transparent !important;
+	padding-bottom: 70px;
 }
 
 .mainContentPart1 {
@@ -13,12 +14,19 @@
 	padding-bottom: 5px !important;
 }
 
-.landingTextPage {
-	margin-top: 1%;
-	font-family: 'Bubblegum Sans', cursive;
-	font-size: 170%;
+.mainContentPart2 {
+	height: auto;
+	background-color: white !important;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	margin-bottom: 5%;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	padding-bottom: 5px !important;
+	padding-top: 5px !important; 
 	text-align: center;
 }
+
+
 
 #QuinLori {
 	width: 100%;
@@ -29,12 +37,42 @@
 	font-size: 110%;
 }
 .compatibilityButton{
-	height: 12%;
-	width: 90%;
+	height: auto;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	width: 100%;
 	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
-	font-size: 70%;
+	font-size: 80%;
 	letter-spacing: 1px;
 	white-space: normal;
+}
+.uploadButton{
+	height: auto;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	width: 90%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	font-size: 100%;
+	letter-spacing: 1px;
+	white-space: normal;
+	margin-top: 9%;
+}
+.quloText {
+	margin-top: 1%;
+	font-family: 'Bubblegum Sans', cursive;
+	text-align: center;
+	font-size: 150%;
+}
+.profilePic{
+	width: auto;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+	align: center;
+}
+input[type=file] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
 }
 
 @media ( max-width : 767px) {
@@ -56,8 +94,10 @@
 		font-size: 120%;
 	}
 	.compatibilityButton{
-		height: 12%;
-		width: 100%;
-		font-size: 80%;
+		font-size: 100%;
+	}
+	.profilePic{
+	width: 50%;
+	margin-left: 25%;
 	}
 }

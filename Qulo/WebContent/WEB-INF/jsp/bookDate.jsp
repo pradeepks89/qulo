@@ -2,6 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.util.Date,java.util.Locale" %>
+
 <%@page session="true"%>
 <html>
 <head>
@@ -35,7 +40,12 @@ function goBack() {
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 						<div class="jumbotron dateForm quloText">
-							<h3>Time to book your date with ${crushName}</h3>
+							<c:if test="${crushDate.user1 == 0}">
+								<h3>Time to book your date with ${crushName}</h3>
+							</c:if>
+							<c:if test="${crushDate.user1 != 0 }">
+								<h3>Looks like you already have a date with ${crushName}. Would you like to update it?</h3>
+							</c:if>
 							<form:form id="register-form" action="userBookDate"
 										method="post" modelAttribute="crushDate" style="display: block;">
 										<c:if test="${crushDate.user1 == 0}">
@@ -50,15 +60,23 @@ function goBack() {
 										</c:if>
 										
 										<input type="hidden" name="crushName" value="${crushName}">
-										<div class="form-group col-lg-3 col-md-3 col-sm-3">
-											Pick a Date:
+										<div class="form-group col-lg-4 col-md-4 col-sm-4">
+											Pick a Date: 
+											<c:set var="now" value="${crushDate.meetDate}" />
+											<fmt:setLocale value="en_US" />
+											<fmt:parseDate value="${now}" var="parsedMeetDate" pattern="yyyy-MM-dd" />
+											<fmt:formatDate var="formattedMeetDate" pattern="yyyy-MM-dd" value="${parsedMeetDate}" />
+											
+											<jsp:useBean id="today" class="java.util.Date" />
+											<fmt:formatDate var="minDate" value="${today}" pattern="yyyy-MM-dd" />
+											
 											<form:input path="meetDate" type="date" name="meetDate" id="meetDate"
-												tabindex="1" class="form-control"  />
+												tabindex="1" class="form-control txtbox" min="${minDate}" value="${formattedMeetDate}" />
 										</div>
-										<div class="form-group col-lg-9 col-md-9 col-sm-9">
+										<div class="form-group col-lg-8 col-md-8 col-sm-8">
 											Location:
 											<form:input path="meetLocation" name="meetLocation" id="meetLocation"
-												tabindex="2" class="form-control" placeholder="Where do you want to meet?" />
+												tabindex="2" class="form-control txtbox" placeholder="Where do you want to meet?" />
 										</div>
 
 										<div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -69,10 +87,16 @@ function goBack() {
 										</div>
 										
 										<div class="form-group col-lg-6 col-md-6 col-sm-6 ">
+											<c:if test="${crushDate.user1 == 0}">
+													<input type="submit" name="register-submit"
+														id="register-submit" tabindex="11"
+														class="form-control btn btn-primary updateButton" value="Save">
+											</c:if>
+											<c:if test="${crushDate.user1 != 0}">
 													<input type="submit" name="register-submit"
 														id="register-submit" tabindex="11"
 														class="form-control btn btn-primary updateButton" value="Update">
-													
+											</c:if>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-6 ">
 											<button class="btn btn-primary updateButton" onclick="goBack()">Back</button>

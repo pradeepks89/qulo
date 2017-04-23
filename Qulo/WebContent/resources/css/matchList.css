@@ -48,5 +48,15 @@
 	text-align: center;
 }
 .profilePic{
-	width: 50%;
+	width: 60%;
+	height: 18%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
+}
+
+@media ( max-width : 767px) {
+	.profilePic{
+		width: 50%;
+		height: 20%;
+	}
+	
 }

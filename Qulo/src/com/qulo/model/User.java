@@ -20,13 +20,16 @@ public class User {
     private int score;
     private int isCrush;
     private int mutualCrush;
-    
+    private String fileName;
+	private String fileData;
+	
+	
     public User() {
     }
  
     public User(String displayName, String password, String firstName,String lastName, String city, String state, String country
     		, String email, String gender, String lookingFor, String aboutMe, String dob, String role, int compatibilityQuestionsOver , 
-    		int score, String age, int isCrush, int mutualCrush) {
+    		int score, String age, int isCrush, int mutualCrush, String fileName, String fileData) {
         this.setDisplayName(displayName);
         this.setPassword(password);
         this.setRole(role);
@@ -45,6 +48,9 @@ public class User {
         this.setAge(age);
         this.setIsCrush(isCrush);
         this.setMutualCrush(mutualCrush);
+        this.setFileName(fileName);
+        this.setFileData(fileData);
+        
     }
 
 	public String getDisplayName() {
@@ -198,5 +204,23 @@ public class User {
 	public void setMutualCrush(int mutualCrush) {
 		this.mutualCrush = mutualCrush;
 	}
+	
+	public String getFileData() {
+		return fileData;
+	}
+	
+	public void setFileData(String fileData) {
+		this.fileData = fileData;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	
+
 }
 

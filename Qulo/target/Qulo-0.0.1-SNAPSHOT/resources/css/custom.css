@@ -1,365 +1,197 @@
+/* rename to nav.css */
+
+
 html, body {
-    background: url("../images/heart background image.png") transparent !important;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+	background: url("../images/heart background image.png") transparent
+		!important;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 
+#QuinLori {
+    width: 100%;
+    padding-top: 15%;
+    align:center;
+}
+
+row{
+	height:50%;
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: #fff;
+	background-color: #59b2e0;
+	font-size: large;
+	width:60%;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+	border-color: #59B2E6;
+}
+
+
+.landingTopHalf{
+	height: 10%;
+}
+.editProfileTopHalf{
+	height: 10%;
+	margin-top: 5%; 
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
+}
+.landingMid{
+	height: 80%;
+}
+.editProfileMid{
+	margin-top:5%;
+	margin-left:20%;
+	margin-right:20%;
+	
+}
+div.clearFlt {
+	clear:both;
+}
+
+.landingTopText{
+	margin-top: 5%; 
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 170%;
+	text-align: center;
+}
+
 .navbar-inverse {
-    background-color: #e65a58;
-    border-color: #e65a58;
+	background-color: #e65a58;
+	border-color: #e65a58;
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #FFFFFF;
+	border-color: #FFFFFF;
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #FFFFFF;
+	color: #FFFFFF;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-    color: #000000;
+	color: #000000;
 }
 
 .navbar-inverse .navbar-nav>li>a:active {
-    color: Red;
+	color: Red;
 }
 
 .navbar-inverse .navbar-toggle {
-    border-color: #FFFFFF;
-    background: #e01a1a;
+	border-color: #FFFFFF;
+	background: #e01a1a;
 }
 
 .navbar-toggle:hover {
-   background-color: #a90000 !important;
+	background-color: #a90000 !important;
 }
 
-
-
 .navbar-default {
-    background-color: #e65a58;
-    border-color: #FFFFFF;
-    height: 30px;
+	background-color: #e65a58;
+	border-color: #FFFFFF;
+	height: 30px;
 }
 
 .navbar-default .navbar-text {
-    color: #FFFFFF;
+	color: #FFFFFF;
 }
 
 .myFooter {
-    display: inline-block;
-    float: none;
-    margin-bottom: 5px;
-    margin-top: 5px;
+	display: inline-block;
+	float: none;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
-
-.img-responsive{
-  display: block;
-  max-width: 50%;
-  max-height: 50%;
+.img-responsive {
+	display: block;
+	max-width: 50%;
+	max-height: 50%;
 }
 
-.image-container{
-    float:left;
+.image-container {
+	float: left;
 }
 
 img:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5); 
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 #qulobrand {
-    height: 1%;
-    /*margin-top: -14.5px;*/
-
+	height: 1%;
+	/*margin-top: -14.5px; */
 }
 
 
-@media screen and (min-width: 768px){
-
-#random1{
-    width: 72%;
-    vertical-align: middle;
+#Quin {
+    -ms-transform: rotate(350deg); /* IE 9 */
+    -webkit-transform: rotate(350deg); /* Chrome, Safari, Opera */
+    transform: rotate(350deg);
+}
+#Lori {
+    -ms-transform: rotate(10deg); /* IE 9 */
+    -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+    transform: rotate(10deg);
+}
+#Qulo{
+	height: 11%
 }
 
-#logo {
-    height: 50px;
-    margin-top: -14.5px;
-    padding-left: 70%;
+.img-thumbnail { /*For Mobile*/
+    background-color: rgba(255,255,255, 0.15);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
-.nav.navbar-nav.navbar-right{
-    padding-right:10%;
+@media only screen and (min-width: 768px) { /*For Tab*/
+.img-thumbnail {
+    width: 80%;
+    height: auto;
+    background-color: rgba(255,255,255,.15);
+   border-color: rgba(255, 255, 255, 0.15);
 }
-
-
-label {
-  display: block;
-  max-width: 100%;
-  margin-bottom: 5%;
-  font-weight: normal;
-  font-size: 0.75em;
-  color:darkslategrey;
-  line-height: 150%
+.landingButton{
+	width: 50%;
 }
-
-#mainContainer{
-    display: flex;
-    overflow: hidden;
-    height: 100%;
-    margin: 5% auto;
-    padding-top: 2%;
-    position: relative;
-    width: 70%;
-    backface-visibility: hidden;
-    will-change: overflow;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
-    box-shadow: 10px 0 7px -7px rgba(31, 73, 125, 0.8), -10px 0 8px -7px rgba(31, 73, 125, 0.8);
 }
-
-#formC {
-    max-height:100%;
-    text-align: center;
-
+@media only screen and (min-width: 1000px) { /*For Laptop*/
+.img-thumbnail {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255,255,255,.15);
+    border-color: rgba(255, 255, 255, 0.15);
 }
-
-body{
-
-    height: 89vh;
-    
+.landingButton{
+	width: 50%;
 }
-
-#imageC {
-    overflow: none;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    height: 100%;   
-        }
-
-#buttoncontainer{
-    padding-top: 8%;
-    vertical-align: bottom;
-    text-align: center;
 }
-
-.btn.btn-primary{
-    padding-right:2%;
-    float:bottom;
-    font-size: 150%;
-    background-color:#337ab7;
-    border-color: grey;
-    border: 2px solid grey;  
-    color:white;
-    font-weight: bold;
+@media only screen and (max-width: 768px) {
+	.img-circle {
+    padding-bottom: 5%;
+    width: 30%;
+    height: auto;
 }
-
-.btn.btn-block{
-    color: darkslategray;
-    background-color: #fff;
-    border-color: indianred;
-    font-weight: bold;
-    /*font-family: 'Caveat Brush'*/
-}
-
-h1{
-    /*font-size: x-large;*/
-    color: indianred;
-}
-
-
-.fillerp{
-    font-size: x-large;
-    color:lightseagreen;
-    font-family: verdana;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-}
-
-.filler1
-{
-    font-size: 25px;
-    color:grey;
-    font-weight: italic;
-    text-shadow: currentColor;
-    font-family: 'Caveat Brush'
-    justify-content: center;
-    padding-bottom: 25px;
-}
-
-.qset{
-    padding-bottom: 20%;
-    border: 2px round indianred;
-}
-
-.filler2{
-    font-size: 25px;
-    color:indianred;
-    font-family: 'Caveat Brush'
-}
-
-.ql{
-
-    font-weight: bold;
-    font-size: large;
-    color: indianred;
-
-}
-
-.dropdown-menu>li>a {
-    font-weight: bold;
-    font-size: 22px;
-    /*color: indianred;*/
-    display: block;
-    padding: 1px 77px;
-    clear: both;
-    font-weight: 900;
-    line-height: inherit;
-    color: teal;
-    white-space: nowrap;
-}
-
-#boxshadow{
-    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
-    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-}
-
-#boxshadow::after {
-    content: '';
-    position: absolute;
-    z-index: -1; /* hide shadow behind image */
-    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);                
-    width: 70%; 
-    left: 15%; /* one half of the remaining 30% */
-    height: 100px;
-    bottom: 0;
-}
-
-.errorMsg{
-
-    font-size: 1em;
-    font-weight: bold;
-    color:red;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-}
-
-}
-
-@media (max-width: 767px) {
-    /* For mobile phones: */
-    [class*="col-sm-"] {
-        width: 100%;
-    }
-#logo {
-    height: 50px;
-    margin-top: -14.5px;
-    /*padding-left: 70%;*/
-}
-
-.nav.navbar-nav.navbar-right{
-    padding-right:10%;
-}
-
-.errorMsg{
-
-    font-size: 1em;
-    font-weight: bold;
-    color:red;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-}
-
-#mainContainer{
+	#QuinLori {
+    width: 130%;
     padding-top: 15%;
-    position: relative;
-    width:100%;
-    margin-left: 0;
-    margin-right: 0;
+    align:center;
 }
-
-label
-    {
-        font-size: 1em;
-        color:darkslategrey;
-        display:block;
-        padding-top: 10%;
-    }
-
-     #random1
-    {
-        max-width: 100%;
-        padding-left: 10%;
-        padding-bottom: 10%;
-
-    }
-    #imageC {
-        text-align: center;
-        width:90%;
-    }
-
-h1{
-    font-size: large;
-    color: indianred;
+.landingTopHalf{
+	height: 25%;
 }
-
-.fillerp{
-    font-size: x-large;
-    color:lightseagreen;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-
+.imageRow{
+	height:50%;
 }
-
-.filler1
-{
-    font-size: large;
-    color:grey;
-    font-weight: italic;
-    text-shadow: currentColor;
-    font-family: cursive;
-}
-
-.filler2{
-    font-size: large;
-    color:indianred;
-    font-family: cursive;
-}
-
-
-
-#formC {
-    width:100%;
-    text-align: center;
-
-}
-   
-#buttoncontainer{
-    padding-top: 6%;
-    text-align: center;
-}
-
-.btn.btn-primary{
-    padding-right:2%;
-    margin-bottom:2%;
-    float:bottom;
-    font-size: 1.5em;
-}
-
-.btn.btn-block{
-    color: darkslategray;
-    background-color: #fff;
-    border-color: darkslategray;
-}
-
-}
-
+	
+	}
+	
 

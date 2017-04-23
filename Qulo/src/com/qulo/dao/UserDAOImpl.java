@@ -1,10 +1,12 @@
 package com.qulo.dao;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.Period;
+import java.util.Base64;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -17,6 +19,7 @@ import org.springframework.jdbc.core.RowMapper;
 import com.qulo.model.CompatibilityQuestion;
 import com.qulo.model.CrushDate;
 import com.qulo.model.User;
+import com.qulo.model.UserImage;
 
 public class UserDAOImpl implements UserDAO {
 
@@ -187,8 +190,19 @@ public class UserDAOImpl implements UserDAO {
 					}
 
 				}));
-
-				return user;
+				user.setFileName(null);
+				UserImage userImage = getImage(rs.getInt("UserID"));
+				if(userImage != null){
+					user.setFileName(userImage.getFilename().substring(userImage.getFilename().lastIndexOf(".")+1));
+					try {
+						user.setFileData(new String(Base64.getEncoder().encode(userImage.getFileData()), "UTF-8"));
+					} catch (UnsupportedEncodingException e) {
+						
+						e.printStackTrace();
+					}
+				}
+				
+;				return user;
 			}
 		});
 		return matchList;
@@ -211,6 +225,7 @@ public class UserDAOImpl implements UserDAO {
 	// save or update date
 	@Override
 	public void saveOrUpdateDate(CrushDate crushDate, String action) {
+		
 		if (action.equals("insert")) {
 			String sql = "INSERT INTO CRUSHDATE (User1, User2, MeetDate, MeetLocation , MeetNote )"
 					+ "VALUES (?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?, ?)";
@@ -246,4 +261,53 @@ public class UserDAOImpl implements UserDAO {
 		});
 		return date;
 	}
+	
+	//insert image
+	public void insertImage(UserImage userImage){
+		String sql = "SELECT 1 FROM USERIMAGE WHERE UserID=" + userImage.getUserID() ;
+		int existImage = 0;
+		existImage = jdbcTemplate.query(sql, new ResultSetExtractor<Integer>() {
+			@Override
+			public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {
+				if (rs.next()) {
+					return 1;
+				}
+				return 0;
+			}
+		});
+		if (existImage == 0){
+			String sql1 = "INSERT INTO USERIMAGE (UserID, UserImageTitle, UserImage)"
+					+ "VALUES (?, ?, ?)";
+			jdbcTemplate.update(sql1, userImage.getUserID() , userImage.getFilename(),
+					userImage.getFileData());
+		} else if (existImage == 1){
+			String sql1 = "UPDATE USERIMAGE SET  UserImageTitle = ?, UserImage = ? "
+					+ "where UserID = ?";
+					
+			jdbcTemplate.update(sql1 , userImage.getFilename(),
+					userImage.getFileData() , userImage.getUserID());
+		}
+	}
+	
+	//insert image
+		public UserImage getImage(int userID){
+			
+			String sql = "SELECT * FROM USERIMAGE WHERE UserID=" + userID ;
+			UserImage userImage = jdbcTemplate.query(sql, new ResultSetExtractor<UserImage>() {
+				@Override
+				public UserImage extractData(ResultSet rs) throws SQLException, DataAccessException {
+					
+					if (rs.next()) {
+						
+						UserImage userImage = new UserImage();
+						userImage.setFilename(rs.getString("UserImageTitle"));
+						userImage.setFileData(rs.getBytes("UserImage"));
+						return userImage;
+					}
+					return null;
+				}
+			});
+			return userImage;
+			
+		}
 }

@@ -36,8 +36,12 @@ public class MatchController {
 			int crushID = Integer.parseInt(request.getParameter("crush"));
 			if(request.getParameter("action").equals("add")){
 				userDAO.addToCrush(userID, crushID);
+				model.addObject("addSuccess", 1);
+				model.addObject("crushName", request.getParameter("crushName"));
 			}else if(request.getParameter("action").equals("remove")){
 				userDAO.removeFromCrush(userID, crushID);
+				model.addObject("removeSuccess", 1);
+				model.addObject("crushName", request.getParameter("crushName"));
 			}
 			
 		}
@@ -62,6 +66,8 @@ public class MatchController {
 				userDAO.addToCrush(userID, crushID);
 			}else if(request.getParameter("action").equals("remove")){
 				userDAO.removeFromCrush(userID, crushID);
+				model.addObject("removeSuccess", 1);
+				model.addObject("crushName", request.getParameter("crushName"));
 			}
 			
 		}
@@ -82,19 +88,27 @@ public class MatchController {
 		model.addObject("crushName", request.getParameter("crushName"));
 		int user1 = Integer.parseInt(request.getParameter("user1"));
 		int user2 = Integer.parseInt(request.getParameter("user2"));
+		
 		if(request.getParameter("action") != null){
+			
 			String action = request.getParameter("action");
 			userDAO.saveOrUpdateDate(crushDate, action);
+			MatchList matchList = new MatchList();
+			matchList.setUserMatchList(userDAO.getMatchList( user.getId(), user.getDisplayName(), user.getLookingFor(), user.getScore()));
+			model.addObject(matchList);
+			model.setViewName("crushList");
+			model.addObject("dateSuccess",1);
 		}else{
 			model.addObject("user1", user1);
 			model.addObject("user2", user2);
+			crushDate = userDAO.getDate(user1, user2);
+			if(crushDate == null){
+				crushDate = new CrushDate();
+			}
+			model.addObject(crushDate);
+			model.setViewName("bookDate");
 		}
-		crushDate = userDAO.getDate(user1, user2);
-		if(crushDate == null){
-			crushDate = new CrushDate();
-		}
-		model.addObject(crushDate);
-		model.setViewName("bookDate");
+		
 		return model;
 	}
 	

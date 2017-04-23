@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.qulo.model.CrushDate;
 import com.qulo.model.User;
+import com.qulo.model.UserImage;
 
 public interface UserDAO {
 
@@ -24,6 +25,10 @@ public interface UserDAO {
     public void saveOrUpdateDate(CrushDate crushDate, String action);
     
     public CrushDate getDate(int user1, int user2);
+    
+    public void insertImage( UserImage userImage);
+    
+    public UserImage getImage(int userID);
 }
 
 

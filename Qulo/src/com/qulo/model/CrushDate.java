@@ -1,5 +1,7 @@
 package com.qulo.model;
 
+import java.util.Date;
+
 public class CrushDate {
 	private int user1;
 	private int user2;

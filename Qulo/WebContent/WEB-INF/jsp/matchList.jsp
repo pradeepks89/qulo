@@ -31,28 +31,49 @@
 		
 			<div class="mainContent jumbotron">
 				<div class="row ">
-		
+					<c:if test="${removeSuccess == 1}">
+					<div class="alert alert-info alert-dismissable">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Well !</strong> ${crushName} has
+						been removed from your crush list.
+						</div>
+					</c:if>
+					<c:if test="${addSuccess == 1}">
+					<div class="alert alert-info alert-dismissable">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Awesome !</strong> ${crushName} has
+						been added to your crush list.
+						</div>
+					</c:if>
 					<c:forEach var="user" items="${matchList.userMatchList}"
 						varStatus="status">
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 quloText">
 							<div class="jumbotron mainContentPart ">
 							<p>${user.lastName}, ${user.firstName} </p>
 							<p>${user.age} years old</p>
-							<c:if test="${user.gender.equals('male') }">
-							<center><img align="middle" alt="User Pic"
-								src="<c:url value="/resources/images/boyAvatar.png" />"
-								class="img-circle img-responsive profilePic" ></center>
+							<c:if test="${user.fileName == null }">
+								<c:if test="${user.gender.equals('male') }">
+								<center><img align="middle" alt="User Pic"
+									src="<c:url value="/resources/images/boyAvatar.png" />"
+									class="img-circle img-responsive profilePic" ></center>
+								</c:if>
+								<c:if test="${user.gender.equals('female') }">
+								<center><img align="middle" alt="User Pic"
+									src="<c:url value="/resources/images/girlAvatar.png" />"
+									class="img-circle img-responsive profilePic"></center>
+								</c:if>
 							</c:if>
-							<c:if test="${user.gender.equals('female') }">
-							<center><img align="middle" alt="User Pic"
-								src="<c:url value="/resources/images/girlAvatar.png" />"
-								class="img-circle img-responsive profilePic"></center>
+							<c:if test="${user.fileName != null }">
+								<center><img align="middle" alt="User Pic" class="img-circle img-responsive profilePic"
+									src="data:image/${user.fileName};base64,${user.fileData}" />
+									</center>
 							</c:if>
 							<br/>
 							<form:form 
 								action="userMatchList" method="post">
 							
 									<input type="hidden" name="crush" value ="${user.id}">
+									<input type="hidden" name="crushName" value="${user.firstName}">
 									<c:if test="${user.isCrush == 0}">
 									<input type="hidden" name="action" value ="add">
 									<button  class="btn btn-primary addCrushButton" type="submit" 

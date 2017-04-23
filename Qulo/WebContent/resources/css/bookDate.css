@@ -58,3 +58,7 @@ textarea {
 	padding-top:10px;
 	background-color: #337ab7;
 }
+.txtbox{
+	height: 55px;
+	font-size: 75%;
+}

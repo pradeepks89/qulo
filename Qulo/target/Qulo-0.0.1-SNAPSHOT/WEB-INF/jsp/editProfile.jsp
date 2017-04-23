@@ -1,17 +1,114 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@page session="true"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>New/Edit Contact</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<link href="<c:url value="/resources/css/compatibility.css" />"
+	rel="stylesheet">
+
+<link href="<c:url value="/resources/includeFiles/includeAll.html" />"
+	rel="import">
+
+
+<title>Edit Profile</title>
 </head>
 <body>
+
+<div
+		w3-include-html="<c:url value="/resources/includeFiles/topMenu.jsp" />"></div>
+
+<div class="container-fluid" id="mainContainer">
+<div class="row">
+  <div class="col-sm-4">.col-sm-4</div>
+  <div class="col-sm-8">.col-sm-8</div>
+</div>
+		<div class="row" >
+		
+			<div class="clearFlt"></div>
+
+			<div class="col-sm-12 col-xs-12 editProfileTopHalf">
+				<div class="col-lg-3 col-md-3 col-sm-3" style="margin-top:3%">
+				<c:if test="${sessionScope.user.gender.equals('male') }">
+					<img align="center" alt="User Pic"
+						src="<c:url value="/resources/images/boyAvatar.png" />"
+						class="img-circle img-responsive">
+					</c:if>
+					<c:if test="${sessionScope.user.gender.equals('female') }">
+					<img align="center" alt="User Pic"
+						src="<c:url value="/resources/images/girlAvatar.png" />"
+						class="img-circle img-responsive">
+					</c:if>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 editProfileTopText">
+					<span style="text-transform: capitalize;">Edit Profile</span>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3"></div>
+
+			</div>
+			
+			<div class="col-sm-12 col-xs-12 editProfileMid">
+				
+				<div class="form-group col-lg-6 col-md-6 col-sm-6">
+											First Name: 
+										</div>
+										<div class="form-group col-lg-6 col-md-6 col-sm-6">
+											Last Name: 
+										</div>
+										
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											Display Name: 
+											
+										</div>
+										
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
+											Gender: 
+										</div>
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
+											Looking For: 
+										</div>
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
+											Date of Birth: 
+										</div>
+										<div class="form-group form-group-lg col-lg-6 col-md-6 col-sm-6">
+											Email: 
+										</div>
+										
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<p>About Yourself:</p>
+											
+											
+										</div>
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6 col-sm-offset-3">
+													<input type="submit" name="register-submit"
+														id="register-submit" tabindex="11"
+														class="form-control btn btn-register" value="Register Now">
+												</div>
+											</div>
+										</div>
+				
+
+			</div>
+			
+
+		</div>
+	</div>
+
+
+<div
+		w3-include-html="<c:url value="/resources/includeFiles/bottomMenu.jsp" />"></div>
+
+
+
     <div align="center">
         <h1>New/Edit Contact</h1>
        <c:out value="${user.displayName}"/>

@@ -49,7 +49,9 @@
 	text-align: center;
 }
 .profilePic{
-	width: 50%;
+	width: 60%;
+	height: 18%;
+	-webkit-box-shadow: rgba(0, 0, 255, 0.8) 0px 0 10px;
 }
 #QuinLori {
 	width: 20%;
@@ -63,5 +65,13 @@
 	font-family: 'Kalam', cursive;
 	letter-spacing: 1px;
 	white-space: normal;
+	
+}
+
+@media ( max-width : 767px) {
+	.profilePic{
+		width: 50%;
+		height: 20%;
+	}
 	
 }
