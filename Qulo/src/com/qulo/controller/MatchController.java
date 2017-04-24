@@ -26,8 +26,10 @@ public class MatchController {
 
 	@Autowired
     private UserDAO userDAO;
+	@Autowired
+	private CompatibilityQuestionDAO compDAO;
 	
-	@RequestMapping(value = "/userMatchList" , method = RequestMethod.POST)
+	@RequestMapping(value = "/userMatchList")
 	public ModelAndView matchList(ModelAndView model , Principal principal, HttpServletRequest request) throws IOException {
 		String userName = principal.getName();
 		User user = userDAO.get(userName);
@@ -50,7 +52,12 @@ public class MatchController {
 		matchList.setUserMatchList(userDAO.getMatchList( user.getId(), user.getDisplayName(), user.getLookingFor(), user.getScore()));
 		model.addObject(matchList);
 		model.setViewName("matchList");
-		
+		if(user.getCompatibilityQuestionsOver() == 0){
+			CompatibilityQuestionList compQueList = new CompatibilityQuestionList();
+			compQueList.setCompatibilityQuestion(compDAO.list());
+			model.addObject("compQueList", compQueList);
+			model.setViewName("compatibilityQuestion");
+		}
 		return model;
 	}
 	

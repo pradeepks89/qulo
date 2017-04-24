@@ -22,6 +22,8 @@ public class User {
     private int mutualCrush;
     private String fileName;
 	private String fileData;
+	private String joinDate;
+	private int isEnabled;
 	
 	
     public User() {
@@ -219,6 +221,22 @@ public class User {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+	public String getJoinDate() {
+		return joinDate;
+	}
+
+	public void setJoinDate(String joinDate) {
+		this.joinDate = joinDate;
+	}
+
+	public int getIsEnabled() {
+		return isEnabled;
+	}
+
+	public void setIsEnabled(int isEnabled) {
+		this.isEnabled = isEnabled;
 	}
 	
 

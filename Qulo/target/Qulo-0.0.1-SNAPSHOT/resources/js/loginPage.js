@@ -70,4 +70,19 @@ $(document).ready(function() {
 	});
 
 });
+window.setInterval(function() {
+	var originalQuin = document.getElementById("Quin").src;
+	var indexQuin = originalQuin.lastIndexOf("/");
+	var newFileQuin = originalQuin.substr(0,indexQuin);
+	document.getElementById("Quin").src = newFileQuin + "/MaleQuloM.gif";
+	
+	var originalLori = document.getElementById("Lori").src;
+	var indexLori = originalLori.lastIndexOf("/");
+	var newFileLori = originalLori.substr(0,indexLori);
+	document.getElementById("Lori").src = newFileLori + "/FemaleQuloM.gif";
+	setTimeout(function(){
+		document.getElementById("Quin").src = originalQuin;
+		document.getElementById("Lori").src = originalLori;
+	},1000); 
+}, 1000);
 

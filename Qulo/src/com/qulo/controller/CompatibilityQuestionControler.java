@@ -2,6 +2,9 @@ package com.qulo.controller;
 
 import java.io.IOException;
 import java.security.Principal;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -14,6 +17,7 @@ import com.qulo.dao.CompatibilityQuestionDAO;
 import com.qulo.dao.UserDAO;
 import com.qulo.model.CompatibilityQuestion;
 import com.qulo.model.CompatibilityQuestionList;
+import com.qulo.model.MatchList;
 import com.qulo.model.User;
 
 @Controller
@@ -26,13 +30,22 @@ public class CompatibilityQuestionControler {
 	private UserDAO userDAO;
 
 	@RequestMapping(value = "/userCompatibility")
-	public ModelAndView listQuestion(ModelAndView model) throws IOException {
+	public ModelAndView listQuestion(ModelAndView model, Principal principal,
+			HttpServletRequest request) throws IOException {
 
 		CompatibilityQuestionList compQueList = new CompatibilityQuestionList();
 		compQueList.setCompatibilityQuestion(compDAO.list());
 		model.addObject("compQueList", compQueList);
 		model.setViewName("compatibilityQuestion");
-
+		String userName = principal.getName();
+		User user = userDAO.get(userName);
+		if(user.getCompatibilityQuestionsOver() == 1){
+			MatchList matchList = new MatchList();
+			matchList.setUserMatchList(userDAO.getMatchList( user.getId(), user.getDisplayName(), user.getLookingFor(), user.getScore()));
+			model.addObject(matchList);
+			request.getSession().setAttribute("user", user);
+			model.setViewName("matchList");
+		}
 		return model;
 	}
 
@@ -59,6 +72,7 @@ public class CompatibilityQuestionControler {
 		user = userDAO.get(userName);
 		model.addObject(user);
 		model.setViewName("userInfoPage");
+		
 		return model;
 	}
 

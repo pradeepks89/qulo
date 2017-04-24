@@ -8,12 +8,12 @@ $(document).ready(function() {
 		$(".opening").hide();
 		temp = curr_div + 1;
 
-		 if (temp > 1) {
-		 if ($('#options' + temp).val() == '') {
-		 $(".errorMsg").show();
-		 return false;
-		 }
-		 }
+		if (temp > 1) {
+			if ($('#options' + temp).val() == '') {
+				$(".errorMsg").show();
+				return false;
+			}
+		}
 		if (curr_div == 14) {
 
 			$('#next').hide();
@@ -31,7 +31,7 @@ $(document).ready(function() {
 			curr_div = curr_div + 1;
 			console.log(curr_div);
 			$('#question' + curr_div).show();
-			$('#answer'+ curr_div).show();
+			$('#answer' + curr_div).show();
 		}
 
 		else {
@@ -81,12 +81,12 @@ $(document).ready(function() {
 		}
 
 	});
-	// $('#submit').on('click', function(e) {
-	// $(".errorMsg").hide();
-	// if ($('#options15').val() == '') {
-	// $(".errorMsg").show();
-	// event.preventDefault();
-	//		}
-	//	});
+	$('#submit').on('click', function(e) {
+		$(".errorMsg").hide();
+		if ($('#options16').val() == '') {
+			$(".errorMsg").show();
+			event.preventDefault();
+		}
+	});
 
 });

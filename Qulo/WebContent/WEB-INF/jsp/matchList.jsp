@@ -33,6 +33,8 @@
 				<div class="row ">
 					<c:if test="${removeSuccess == 1}">
 					<div class="alert alert-info alert-dismissable">
+						<img id="alertlogo" alt="Logo" 
+							src="<c:url value="/resources/images/logo.gif" />" />
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 						<strong>Well !</strong> ${crushName} has
 						been removed from your crush list.
@@ -40,6 +42,8 @@
 					</c:if>
 					<c:if test="${addSuccess == 1}">
 					<div class="alert alert-info alert-dismissable">
+							<img id="alertlogo" alt="Logo" 
+							src="<c:url value="/resources/images/logo.gif" />" />
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 						<strong>Awesome !</strong> ${crushName} has
 						been added to your crush list.

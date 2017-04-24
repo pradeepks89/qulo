@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Footer -->
+<div id="footer">
     <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container text-center">
       <div class="navbar-text myFooter"> 
@@ -8,4 +9,5 @@
       </div>
     </div>
   </nav>
+  </div>
   <!-- /.container -->

@@ -15,12 +15,51 @@
 <script src="<c:url value="/resources/js/bootstrap-filestyle.min.js"/>"></script>
 <script type="text/javascript">
 $(":file").filestyle({icon: false});
+$(document).ready(function() {
+	
+	var currWidth = $(document).width();
+	console.log(currWidth);
+	
+	var endPos = (currWidth / 40)  ;
+	console.log(endPos);
+	
+	window.setInterval(function() {
+		$('#flyin').animate({left: endPos}, 1000);
+		$('#Quin').tooltip('show');
+		setTimeout(function(){
+			$('#flyin').animate({left: endPos-200}, 1000);
+			$('#Quin').tooltip('hide');
+		},8000); 
+	}, 10000);
+	
+	$("#fileSubmit").click( function()
+	           {
+					var imgVal =$('#fileUpload').val();
+					if(imgVal ==''){
+						alert("Oops, please select a valid file! (Only JPG, PNG and GIF files are allowed)")
+						return false;
+					}
+					var ext = imgVal.split('.').pop().toLowerCase();
+					if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+						alert("Oops, please select a valid file! (Only JPG, PNG and GIF files are allowed)")
+						return false;
+					}
+	           }
+	        );
+	$('[data-toggle="tooltip"]').tooltip(); 
+	
+});
 </script>
 <title>User Info</title>
 </head>
 <body>
 	<c:import url="/resources/includeFiles/topMenu.jsp"></c:import>
-
+	<div id="flyin" >
+				<a id="helloQuin" href="userMatchList" >
+				<img id="Quin" class="img-thumbnail" alt="Quin" data-toggle="tooltip" data-placement="right" title="Check out your matches"
+						src="<c:url value="/resources/images/MaleQulo.gif" />" />
+				</a>
+	</div>
 	<div class="container">
 		<div class="jumbotron headerContent">
 			<div class="row">
@@ -71,7 +110,7 @@ $(":file").filestyle({icon: false});
 								<hr />
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4  ">
-							<c:if test="${userImageExt == null}">
+							<c:if test="${userImage == null}">
 									<c:if test="${user.gender.equals('male') }">
 									<center><img align="middle" alt="User Pic"
 										src="<c:url value="/resources/images/boyAvatar.png" />"
@@ -83,7 +122,7 @@ $(":file").filestyle({icon: false});
 										class="img-circle img-responsive profilePic"></center>
 									</c:if>
 								</c:if>
-								<c:if test="${userImageExt != null}">
+								<c:if test="${userImage != null}">
 									<img class="img-circle img-responsive profilePic"
 									src="data:image/${userImageExt};base64,${userImage}" />
 								</c:if>
@@ -95,9 +134,10 @@ $(":file").filestyle({icon: false});
 									<h3>
 										Upload new picture to change your profile picture
 									</h3>
-									<input type="file" class="filestyle" name="fileUpload" data-icon="false" >
+									<input id="fileUpload" type="file" class="filestyle" name="fileUpload" data-icon="false" >
+									
 									<p>
-										<input type="submit" class="btn btn-primary uploadButton"
+										<input id="fileSubmit" type="submit" class="btn btn-primary uploadButton"
 											value="Upload" />
 									</p>
 								</form>
@@ -109,6 +149,6 @@ $(":file").filestyle({icon: false});
 		</div>
 </div>
 		<c:import url="/resources/includeFiles/bottomMenu.jsp"></c:import>
-		<script src="<c:url value="/resources/js/compatibility.js" />"></script>
+		
 </body>
 </html>

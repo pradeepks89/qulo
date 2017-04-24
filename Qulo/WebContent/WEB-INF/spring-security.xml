@@ -16,10 +16,11 @@
         <intercept-url pattern="/logout" access="permitAll()" />
         <intercept-url pattern="/register*" access="permitAll()" />
  
- 
+ 		<intercept-url pattern="/userInfo"
+            access="hasAnyRole('ROLE_USER' , 'ROLE_ADMIN')" />
         <intercept-url pattern="/user**"
-            access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
-        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
+            access="hasAnyRole('ROLE_USER')" />
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/other/**" access="isAuthenticated()" />
  
         <access-denied-handler error-page="/403" />
@@ -38,7 +39,7 @@
         <authentication-provider>
             <user-service>
                 <user name="user1" password="12345" authorities="ROLE_USER" />
-                <user name="admin1" password="12345" authorities="ROLE_USER, ROLE_ADMIN" />
+                <user name="admin1" password="12345" authorities="ROLE_ADMIN" />
             </user-service>
         </authentication-provider>
  

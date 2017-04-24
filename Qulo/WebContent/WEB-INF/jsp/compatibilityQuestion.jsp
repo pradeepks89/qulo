@@ -31,7 +31,7 @@
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 imageContent ">
 						<img id="compatibilityImage"
 							src="<c:url value="/resources/images/MaleQulo.gif" />"
-							alt="Image for guy/girl" align="right">
+							alt="Image for guy/girl" >
 					</div>
 
 					<div
@@ -72,7 +72,7 @@
 								<div
 									class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mainContentAnswerSelect">
 									<div class='opening'>
-										<p class="regularTalk" style="padding-left: 30%;">Click
+										<p class="quloText" >Click
 											Next to get started!</p>
 									</div>
 									<c:forEach var="compatibilityQuestion"
@@ -94,8 +94,8 @@
 														</form:option>
 													</c:forTokens>
 												</form:select>
-												<p class="errorMsg" style="display: none padding-top:10%;">Oops,
-													please select a valid response!</p>
+												<div class="errorMsg" style="display: none padding-top:10%;">Oops,
+													please select a valid response!</div>
 											</div>
 
 										</div>

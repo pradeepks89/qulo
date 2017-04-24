@@ -56,11 +56,15 @@ public class UserDAOImpl implements UserDAO {
 		String sql = "update USER set IsEnabled = 0 WHERE UserID=?";
 		jdbcTemplate.update(sql, userId);
 	}
-
+	@Override
+	public void enable(int userId) {
+		String sql = "update USER set IsEnabled = 1 WHERE UserID=?";
+		jdbcTemplate.update(sql, userId);
+	}
 	// List of users for admin
 	@Override
 	public List<User> list() {
-		String sql = "SELECT * FROM USER";
+		String sql = "SELECT * FROM USER order by DateOfJoining Desc";
 		List<User> listUser = jdbcTemplate.query(sql, new RowMapper<User>() {
 
 			@Override
@@ -69,8 +73,8 @@ public class UserDAOImpl implements UserDAO {
 
 				aUser.setId(rs.getInt("UserID"));
 				aUser.setDisplayName(rs.getString("DisplayName"));
-				aUser.setPassword(rs.getString("Password"));
-
+				aUser.setJoinDate(rs.getString("DateOfJoining"));
+				aUser.setIsEnabled(rs.getInt("IsEnabled"));
 				return aUser;
 			}
 
@@ -82,7 +86,7 @@ public class UserDAOImpl implements UserDAO {
 	// get User record
 	@Override
 	public User get(String displayName) {
-		String sql = "SELECT * FROM USER WHERE DisplayName='" + displayName + "'";
+		String sql = "SELECT * FROM USER WHERE IsEnabled = 1 and DisplayName='" + displayName + "'";
 		User user = jdbcTemplate.query(sql, new ResultSetExtractor<User>() {
 			@Override
 			public User extractData(ResultSet rs) throws SQLException, DataAccessException {
@@ -101,7 +105,17 @@ public class UserDAOImpl implements UserDAO {
 					user.setLookingFor(rs.getString("LookingFor"));
 					user.setGender(rs.getString("Gender"));
 					user.setCompatibilityQuestionsOver(rs.getInt("CompatibilityQuestionsOver"));
-
+					user.setFileName(null);
+					UserImage userImage = getImage(rs.getInt("UserID"));
+					if(userImage != null){
+						user.setFileName(userImage.getFilename().substring(userImage.getFilename().lastIndexOf(".")+1));
+						try {
+							user.setFileData(new String(Base64.getEncoder().encode(userImage.getFileData()), "UTF-8"));
+						} catch (UnsupportedEncodingException e) {
+							
+							e.printStackTrace();
+						}
+					}
 					return user;
 				}
 
@@ -112,7 +126,7 @@ public class UserDAOImpl implements UserDAO {
 
 		String sql1 = "select sum(SelfScore) from SCORE, USER_COMPATIBILITY_ANSWERS, USER"
 				+ " where USER_COMPATIBILITY_ANSWERS.Selection = SCORE.Option and USER.UserID = USER_COMPATIBILITY_ANSWERS.UserID"
-				+ " and USER.DisplayName ='" + displayName + "'";
+				+ " and USER.IsEnabled = 1 and USER.DisplayName ='" + displayName + "'";
 		user.setScore(jdbcTemplate.query(sql1, new ResultSetExtractor<Integer>() {
 			@Override
 			public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {
@@ -135,7 +149,7 @@ public class UserDAOImpl implements UserDAO {
 				+ "from SCORE, USER_COMPATIBILITY_ANSWERS, USER"
 				+ " where USER_COMPATIBILITY_ANSWERS.Selection = SCORE.Option "
 				+ "and USER.UserID = USER_COMPATIBILITY_ANSWERS.UserID" + " and USER.Gender = '" + lookingFor + "'"
-				+ " and USER.DisplayName <> '" + displayName + "' " + " group by USER.UserID"
+				+ " and USER.IsEnabled = 1 and USER.DisplayName <> '" + displayName + "' " + " group by USER.UserID"
 				+ " having sum(SelfScore) between " + (score - 10000) + " and " + (score + 10000);
 
 		List<User> matchList = jdbcTemplate.query(sql, new RowMapper<User>() {
@@ -175,7 +189,7 @@ public class UserDAOImpl implements UserDAO {
 				}));
 
 				// Check if its mutual crush
-				String sql2 = "SELECT UserID, CrushID FROM   qulo.CRUSHLIST L1 WHERE "
+				String sql2 = "SELECT UserID, CrushID FROM qulo.CRUSHLIST L1 WHERE "
 						+ "EXISTS ( SELECT * FROM   qulo.CRUSHLIST L2 WHERE  L1.UserID = L2.CrushID AND L1.CrushID = L2.UserID) "
 						+ "and UserID = " + userID + " and CrushID = " + rs.getInt("UserID");
 

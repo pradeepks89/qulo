@@ -23,16 +23,17 @@
 		<div >
 			<div class="row" id="row_padding">
 				<div class="col-xs-4 col-md-2 col-md-offset-3" align="left">
-					<img id="Quin" class="img-thumbnail" alt="Quin"
-						src="<c:url value="/resources/images/MaleQulo.gif" />" />
+					<img id="Lori" class="img-thumbnail" alt="Lorie"
+						src="<c:url value="/resources/images/FemaleQulo.gif" />" />
 				</div>
 				<div class="col-xs-4 col-md-2" align="center">
 					<img id="Qulo" class="img-thumbnail" alt="Qulo"
 						src="<c:url value="/resources/images/quloname.png" />" />
 				</div>
 				<div class="col-xs-4 col-md-2" align="right">
-					<img id="Lori" class="img-thumbnail" alt="Lorie"
-						src="<c:url value="/resources/images/FemaleQulo.gif" />" />
+					
+						<img id="Quin" class="img-thumbnail" alt="Quin"
+						src="<c:url value="/resources/images/MaleQulo.gif" />" />
 				</div>
 			</div>
 			<div class="row">

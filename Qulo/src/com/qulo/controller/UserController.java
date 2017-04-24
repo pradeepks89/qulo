@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.qulo.dao.CompatibilityQuestionDAO;
 import com.qulo.dao.UserDAO;
 import com.qulo.model.User;
 import com.qulo.model.UserImage;
@@ -29,9 +30,25 @@ public class UserController {
 	@Autowired
     private UserDAO userDAO;
 	
+	@RequestMapping(value="/adminDelete")
+	public ModelAndView blockUser(ModelAndView model, HttpServletRequest request) throws IOException{
+	    
+		int userID = Integer.parseInt(request.getParameter("userID"));
+		String action = request.getParameter("action");
+	    if(action.equals("b")){
+	    	userDAO.delete(userID);
+	    }else if (action.equals("e")){
+	    	userDAO.enable(userID);
+	    }
+	    List<User> userList = userDAO.list();
+   	 	model.addObject(userList);
+   	 	model.setViewName("adminPage"); 
+	    return model;
+	}
+	
 	//list user. Used my admin rename to admin based mapping
 	@RequestMapping(value="/userList")
-	public ModelAndView listUser(ModelAndView model) throws IOException{
+	public ModelAndView listUser(ModelAndView model ) throws IOException{
 	    List<User> listUser = userDAO.list();
 	    model.addObject("listUser", listUser);
 	    model.setViewName("userList");
@@ -53,16 +70,21 @@ public class UserController {
 	@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
     public ModelAndView userInfo(ModelAndView model, Principal principal , HttpServletRequest request,
     		HttpServletResponse response) throws UnsupportedEncodingException {
- 
-        // After user login successfully.
-        String userName = principal.getName();
-        System.out.println("UserDAO Name: "+ userName);
-        
-        User user = userDAO.get(userName);
-        model.setViewName("userInfoPage");
-        model.addObject(user);
-        request.getSession().setAttribute("user", user);
-        addImage(model, response, user.getId());
+		if(request.isUserInRole("ROLE_USER")){
+			// After user login successfully.
+	        String userName = principal.getName();
+	        System.out.println();
+
+	        User user = userDAO.get(userName);
+	        model.setViewName("userInfoPage");
+	        model.addObject(user);
+	        request.getSession().setAttribute("user", user);
+	        addImage(model, response, user.getId());
+        }else if(request.isUserInRole("ROLE_ADMIN")){
+        	List<User> userList = userDAO.list();
+        	 model.addObject(userList);
+        	model.setViewName("adminPage"); 
+        }
 	    return model;
     }
 	

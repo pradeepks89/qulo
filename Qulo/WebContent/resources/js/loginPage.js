@@ -25,6 +25,7 @@ $(document).ready(function() {
 	
 	$('#login-submit').click(function(e) {
 		if ($('#username').val() == '' || $('#password').val() == ''){
+			$( "#loginErrorDiv" ).empty();
 			$( "#loginErrorDiv" ).append( "<p>User name or password is not filled.</p>" );
 			$( '#loginDatabaseError').hide();
 			event.preventDefault();
@@ -44,7 +45,7 @@ $(document).ready(function() {
 	
 	$('#register-submit').click(function(e) {
 		$( '#errorPassword').hide();
-		for (i = 1; i <= 12; i++) {
+		for (i = 1; i <= 13; i++) {
 			if ($('#register'+i).val() == ''){
 				$('#register'+i).css('border-color', 'red');
 				event.preventDefault();
@@ -70,4 +71,19 @@ $(document).ready(function() {
 	});
 
 });
+window.setInterval(function() {
+	var originalQuin = document.getElementById("Quin").src;
+	var indexQuin = originalQuin.lastIndexOf("/");
+	var newFileQuin = originalQuin.substr(0,indexQuin);
+	document.getElementById("Quin").src = newFileQuin + "/MaleQuloM.gif";
+	
+	var originalLori = document.getElementById("Lori").src;
+	var indexLori = originalLori.lastIndexOf("/");
+	var newFileLori = originalLori.substr(0,indexLori);
+	document.getElementById("Lori").src = newFileLori + "/FemaleQuloM.gif";
+	setTimeout(function(){
+		document.getElementById("Quin").src = originalQuin;
+		document.getElementById("Lori").src = originalLori;
+	},1000); 
+}, 1000);
 

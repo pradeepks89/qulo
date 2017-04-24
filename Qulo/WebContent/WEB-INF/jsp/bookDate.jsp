@@ -59,7 +59,7 @@ function goBack() {
 											<input type="hidden" name="user2" value="${crushDate.user2}"/>
 										</c:if>
 										
-										<input type="hidden" name="crushName" value="${crushName}">
+										<input type="hidden" name="crushName" value="${crushName}" >
 										<div class="form-group col-lg-4 col-md-4 col-sm-4">
 											Pick a Date: 
 											<c:set var="now" value="${crushDate.meetDate}" />
@@ -71,18 +71,18 @@ function goBack() {
 											<fmt:formatDate var="minDate" value="${today}" pattern="yyyy-MM-dd" />
 											
 											<form:input path="meetDate" type="date" name="meetDate" id="meetDate"
-												tabindex="1" class="form-control txtbox" min="${minDate}" value="${formattedMeetDate}" />
+												tabindex="1" class="form-control txtbox" min="${minDate}" value="${formattedMeetDate}" required="required"/>
 										</div>
 										<div class="form-group col-lg-8 col-md-8 col-sm-8">
 											Location:
 											<form:input path="meetLocation" name="meetLocation" id="meetLocation"
-												tabindex="2" class="form-control txtbox" placeholder="Where do you want to meet?" />
+												tabindex="2" class="form-control txtbox" placeholder="Where do you want to meet?" required="required"/>
 										</div>
 
 										<div class="form-group col-lg-12 col-md-12 col-sm-12">
 											Note for the Date:
 											
-											<form:textarea path="meetNote" name="meetNote" id="meetNote"
+											<form:textarea required="required" path="meetNote" name="meetNote" id="meetNote"
 												tabindex="3" placeholder="A special note for the date" />
 										</div>
 										

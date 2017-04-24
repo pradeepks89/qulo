@@ -11,22 +11,23 @@ body {
  
 /*  rotate the images */
  #Quin {
-    -ms-transform: rotate(350deg); /* IE 9 */
-    -webkit-transform: rotate(350deg); /* Chrome, Safari, Opera */
-    transform: rotate(350deg);
-}
-#Lori {
+    
     -ms-transform: rotate(10deg); /* IE 9 */
     -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
     transform: rotate(10deg);
 }
+#Lori {
+    -ms-transform: rotate(350deg); /* IE 9 */
+    -webkit-transform: rotate(350deg); /* Chrome, Safari, Opera */
+    transform: rotate(350deg);
+}
 #Qulo{
-	height: 11%
+	height: auto;
 }
 
 /* Set image background to transparent */
 .img-thumbnail { 
-    background-color: rgba(255,255,255,.15);
+    background-color: transparent;
     border-color: rgba(255, 255, 255, 0.15);
 }
 

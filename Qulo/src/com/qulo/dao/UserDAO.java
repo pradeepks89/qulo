@@ -29,6 +29,8 @@ public interface UserDAO {
     public void insertImage( UserImage userImage);
     
     public UserImage getImage(int userID);
+    
+    public void enable(int userId);
 }
 
 
