@@ -45,9 +45,11 @@
 								
 							</div>
 						</div>
+						
+						<!--Loop that displays the compatibility questions one by one-->
 						<c:forEach var="compatibilityQuestion"
 									items="${compQueList.compatibilityQuestion}" varStatus="status">
-
+									<!--Chat bubble for Octopus-->
 									<div class="qset" style="display: none;"
 										id='question${status.index+1}'>
 										<div class="jumbotron questionBox octoTalk">
@@ -75,6 +77,8 @@
 										<p class="quloText" >Click
 											Next to get started!</p>
 									</div>
+									
+									<!-- Answer area for each question-->
 									<c:forEach var="compatibilityQuestion"
 										items="${compQueList.compatibilityQuestion}"
 										varStatus="status">
@@ -94,6 +98,8 @@
 														</form:option>
 													</c:forTokens>
 												</form:select>
+												
+												<!-- Area which displays error message in case there are any issues -->
 												<div class="errorMsg" style="display: none padding-top:10%;">Oops,
 													please select a valid response!</div>
 											</div>
