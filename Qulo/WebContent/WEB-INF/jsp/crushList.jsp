@@ -20,7 +20,11 @@
 				</div>
 			</div>
 		</div>
+		
+		<!--Main container-->
 		<div class="mainContent jumbotron">
+			
+			<!--Area that notifies the user that a new user has been added to crushlist or an existing user has been removed from crushlist-->
 			<div class="row ">
 				<c:if test="${dateSuccess == 1}">
 					<div class="alert alert-success alert-dismissable">
@@ -29,6 +33,7 @@
 						been booked.
 					</div>
 				</c:if>
+				
 				<c:if test="${removeSuccess == 1}">
 					<div class="alert alert-info alert-dismissable">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -39,6 +44,8 @@
 				<c:set var="count" value="0" scope="page" />
 				<c:forEach var="user" items="${matchList.userMatchList}"
 					varStatus="status">
+					
+					<!--Area that displays the entire crushlist-->
 					<c:if test="${user.isCrush == 1}">
 						<c:set var="count" value="${count + 1}" scope="page" />
 						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 quloText">
@@ -107,6 +114,7 @@
 										to Compatibility Questions!</button>
 								</form>
 							</c:if>
+							<!--Message that is displayed when the crushlist is empty-->
 							<c:if test="${loggedInUser.compatibilityQuestionsOver==1}">
 								<h1 class="octoTalk">"Looks like no one is here! Let's find
 									you some matches to add to your crush list "</h1>
