@@ -1,8 +1,8 @@
+
+package com.qulo.config;
 /* Main configuration file that initializes the data source and also the required data access objects
 It also initialized the multipart repsolver which f=helps in image upload to the database
 */
-package com.qulo.config;
-
 import javax.sql.DataSource;
 
 import com.qulo.dao.*;
