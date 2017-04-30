@@ -1,5 +1,7 @@
 package com.qulo.model;
-
+/*
+	This is the user object file. This is also the data model. It contains all the required fields for the user. These fields are then populated using the data access programs
+*/
 public class User {
 	private int id;
     private String displayName;
