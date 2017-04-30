@@ -1,4 +1,14 @@
 package com.qulo.controller;
+/*
+	This file helps us control the login access to the page. 
+	Activities performed by this program
+	1. User login
+	2. User registration
+	3. Admin access identification
+	4. Saving and editing of profile information
+	
+	It also ensures that users with improper credentials do not gain access to the application.
+*/
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
