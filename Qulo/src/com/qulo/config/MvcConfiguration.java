@@ -16,7 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan(basePackages="net.codejava.spring")
 @EnableWebMvc
 public class MvcConfiguration extends WebMvcConfigurerAdapter{
- 
+/* Main configuration file that initializes the data source and also the required data access objects
+It also initialized the multipart repsolver which f=helps in image upload to the database
+*/
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
