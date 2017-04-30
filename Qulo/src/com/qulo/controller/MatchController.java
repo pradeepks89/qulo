@@ -1,5 +1,13 @@
 package com.qulo.controller;
+/*
+	This is an exclusive controller created to handle the user matches their crush list activities and also bookin of date
+. The actions performed by this controllers are
+	1. Fetching match list
+	2. Adding users to crush list
+	3. Removing users from crush list
+	4. Adding or removing dates. 
 
+*/
 import java.io.IOException;
 import java.security.Principal;
 
@@ -118,6 +126,4 @@ public class MatchController {
 		
 		return model;
 	}
-	
-
 }
