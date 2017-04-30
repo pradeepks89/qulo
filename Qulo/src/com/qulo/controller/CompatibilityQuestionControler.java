@@ -1,5 +1,7 @@
 package com.qulo.controller;
-
+/*
+	This controller is used to fetch compability questions from the databse and also to save the answers back to the database once the user answers it 
+*/
 import java.io.IOException;
 import java.security.Principal;
 
