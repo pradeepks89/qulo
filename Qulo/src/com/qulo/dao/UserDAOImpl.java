@@ -1,5 +1,7 @@
 package com.qulo.dao;
-
+/*
+This file performs all the data access requests. It performs data selects, updates and deletes which are user related
+*/
 import java.io.UnsupportedEncodingException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
