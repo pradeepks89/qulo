@@ -46,6 +46,8 @@ function goBack() {
 							<c:if test="${crushDate.user1 != 0 }">
 								<h3>Looks like you already have a date with ${crushName}. Would you like to update it?</h3>
 							</c:if>
+							
+							<!--Booking a user date-->
 							<form:form id="register-form" action="userBookDate"
 										method="post" modelAttribute="crushDate" style="display: block;">
 										<c:if test="${crushDate.user1 == 0}">
