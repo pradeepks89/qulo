@@ -10,7 +10,7 @@
 <c:import url="/resources/includeFiles/includeAll.jsp"></c:import>
 
 <link href="<c:url value="/resources/css/adminPage.css" />"
-	rel="stylesheet">
+	rel="stylesheet">	
 <style type="text/css">
 .mainContent {
 	width: 70%;
@@ -31,6 +31,7 @@
 	vertical-align: middle;
 }
 
+/* disable button for admin */
 .blockButton {
 	height: 6%;
 	width: 90%;
@@ -41,6 +42,7 @@
 	padding-top: 10px;
 }
 
+/* Enable button for the admin page */
 .enableButton {
 	height: 6%;
 	width: 90%;
@@ -77,6 +79,7 @@
 	<div class="container">
 		<div class="jumbotron headerContent">
 			<div class="row">
+				<!-- responsive webpage for the div container -->
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 headerText">
 					<span style="text-transform: capitalize;">Admin Page</span>
 				</div>
@@ -92,6 +95,7 @@
 				</div>
 			</div>
 		</center>
+		<!-- List of all users registered with Qulo website -->
 		<c:forEach var="user" items="${userList}" varStatus="status">
 			<center>
 				<div class="jumbotron mainContent">
@@ -103,10 +107,11 @@
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 quloText">
 							<span> ${user.displayName}</span>
 						</div>
+						<!-- delete user button -->
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 quloText">
 							<form:form action="adminDelete" method="post">
 								<input type="hidden" name="userID" value="${user.id}">
-
+								<!-- enable user -->
 								<c:if test="${user.isEnabled == 1}">
 									<input type="hidden" name="action" value="b">
 									<button class="btn btn-primary blockButton" type="submit"
