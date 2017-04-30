@@ -1,6 +1,8 @@
 /* rename to nav.css */
 
+/* all images and content have been defined using relative sizes in % to ensure compatibility across all devices */
 
+/* body background image defined for all pages - the <body> tag */
 html, body {
 	background: url("../images/heart background image.png") transparent
 		!important;
@@ -59,6 +61,8 @@ div.clearFlt {
 	clear:both;
 }
 
+/* text for the header below the navbar */
+
 .landingTopText{
 	margin-top: 5%; 
 	font-family: 'Bubblegum Sans', cursive;
@@ -66,6 +70,7 @@ div.clearFlt {
 	text-align: center;
 }
 
+/* css for navbar */
 .navbar-inverse {
 	background-color: #e65a58;
 	border-color: #e65a58;
@@ -106,6 +111,8 @@ div.clearFlt {
 	color: #FFFFFF;
 }
 
+/* css for navbar ends here  */
+
 .myFooter {
 	display: inline-block;
 	float: none;
@@ -113,6 +120,7 @@ div.clearFlt {
 	margin-top: 5px;
 }
 
+/* image of navbar */
 .img-responsive {
 	display: block;
 	max-width: 50%;
