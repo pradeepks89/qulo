@@ -36,11 +36,13 @@
 
 			<div class="col-sm-12 col-xs-12 editProfileTopHalf">
 				<div class="col-lg-3 col-md-3 col-sm-3" style="margin-top:3%">
+				<!-- gender variable retrieved from database to display appropriate logo - male for male, female for female -->
 				<c:if test="${sessionScope.user.gender.equals('male') }">
 					<img align="center" alt="User Pic"
 						src="<c:url value="/resources/images/boyAvatar.png" />"
 						class="img-circle img-responsive">
 					</c:if>
+				<!-- gender variable retrieved from database to display appropriate logo - male for male, female for female -->
 					<c:if test="${sessionScope.user.gender.equals('female') }">
 					<img align="center" alt="User Pic"
 						src="<c:url value="/resources/images/girlAvatar.png" />"
