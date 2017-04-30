@@ -1,3 +1,5 @@
+/* css for landing page */
+
 .mainContent {
 	height: auto;
 	background-color: transparent !important;
@@ -25,8 +27,6 @@
 	padding-top: 5px !important; 
 	text-align: center;
 }
-
-
 
 #QuinLori {
 	width: 100%;
@@ -74,6 +74,8 @@ input[type=file] {
     text-overflow: ellipsis;
     width: 150px;
 }
+
+/* qulo image flies in */
 #flyin {
   width: 300px;
   height: 100px;
