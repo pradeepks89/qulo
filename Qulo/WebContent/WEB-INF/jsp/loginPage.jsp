@@ -18,6 +18,7 @@
 	<c:import url="/resources/includeFiles/topMenuLogin.jsp"></c:import>
 
 	<!-- Page Content -->
+	<!-- Container that holds both Login form and Registration form in two tabs -->
 	<div class="container loginContainer">
 
 		<div >
@@ -55,7 +56,7 @@
 
 							<div class="row">
 								<div class="col-lg-12">
-
+									<!-- Login form for exising users -->
 									<form id="login-form" name='f'
 										action="${pageContext.request.contextPath}/j_spring_security_check"
 										method='POST' style="display: block;">
@@ -111,7 +112,7 @@
 										</div>
 									</form>
 
-
+									<!--Registration form for new users -->
 									<form:form id="register-form" action="registerUser"
 										method="post" modelAttribute="user" style="display: block;">
 
