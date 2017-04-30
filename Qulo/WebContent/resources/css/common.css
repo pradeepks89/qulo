@@ -1,3 +1,6 @@
+
+/* Common css for all pages, whihc defines the background page size and fonts */
+
 body {
 	background: url("../images/yellowHeart.jpg") transparent !important;
 	height: 100%;
